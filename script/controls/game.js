@@ -7,77 +7,31 @@ export {checkWin, resetGame};
 const cols = getCols();
 const rows = getRows();
 
+
+
 let gameBoard = getGameBoard();
-
 // Función para verificar si alguien ha ganado
-
 function checkWin(row, col) {
-    const player = gameBoard[row][col];
+    const directions = [
+        [0, 1], // horizontal
+        [1, 0], // vertical
+        [1, 1], // diagonal hacia abajo
+        [1, -1] // diagonal hacia arriba
+    ];
 
-    // Verificar horizontal
-    let count = 1;
-    let c = col - 1;
-    while (c >= 0 && gameBoard[row][c] === player) {
-        count++;
-        c--;
+    for (const [dx, dy] of directions) {
+        let count = 1;
+        for (const sign of [-1, 1]) {
+            let r = row + sign * dx;
+            let c = col + sign * dy;
+            while (r >= 0 && r < rows && c >= 0 && c < cols && gameBoard[r][c] === getCurrentPlayer()) {
+                count++;
+                r += sign * dx;
+                c += sign * dy;
+            }
+        }
+        if (count >= 4) return true;
     }
-    c = col + 1;
-    while (c < cols && gameBoard[row][c] === player) {
-        count++;
-        c++;
-    }
-    if (count >= 4) return true;
-
-    // Verificar vertical
-    count = 1;
-    let r = row - 1;
-    while (r >= 0 && gameBoard[r][col] === player) {
-        count++;
-        r--;
-    }
-    r = row + 1;
-    while (r < rows && gameBoard[r][col] === player) {
-        count++;
-        r++;
-    }
-    if (count >= 4) return true;
-
-    // Verificar diagonal hacia abajo-derecha
-    count = 1;
-    r = row - 1;
-    c = col + 1;
-    while (r >= 0 && c < cols && gameBoard[r][c] === player) {
-        count++;
-        r--;
-        c++;
-    }
-    r = row + 1;
-    c = col - 1;
-    while (r < rows && c >= 0 && gameBoard[r][c] === player) {
-        count++;
-        r++;
-        c--;
-    }
-    if (count >= 4) return true;
-
-    // Verificar diagonal hacia arriba-derecha
-    count = 1;
-    r = row - 1;
-    c = col - 1;
-    while (r >= 0 && c >= 0 && gameBoard[r][c] === player) {
-        count++;
-        r--;
-        c--;
-    }
-    r = row + 1;
-    c = col + 1;
-    while (r < rows && c < cols && gameBoard[r][c] === player) {
-        count++;
-        r++;
-        c++;
-    }
-    if (count >= 4) return true;
-
     return false;
 }
 
