@@ -1,5 +1,5 @@
 "use strict";
-import { getCurrentPlayer } from "./players.js";
+import { getCurrentPlayer } from "../players/players.js";
 
 export { crearTablero, dropToken, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol}
 
@@ -48,7 +48,6 @@ const crearTablero = () => {
             celda.classList.add("celda");
             celda.dataset.column = col;
             celda.dataset.row = row;
-            celda.textContent = `col: ${col} row: ${row}`;
             tablero.appendChild(celda);
             gameBoard[row][col] = null;
         }
@@ -66,13 +65,16 @@ const dropToken = (columna) => {
         for (let row = rows - 1; row >= 0; row--) {
             if (!gameBoard[row][columna]) { //Si la posicion está vacia devuelve true
                 gameBoard[row][columna] = currentPlayerValue;
-                const cell = document.querySelector(`[data-row="${row}"][data-column="${columna}"]`);
+                let cell = document.querySelector(`[data-row="${row}"][data-column="${columna}"]`);
                 currentCol = Number(columna); //valor de la columna en la que se colocó la ficha
                 currentRow = Number(row); //valor de la fila en la que se colocó la ficha
+                cell.classList.remove("redhover");
+                cell.classList.remove("yellowhover");
                 cell.classList.add(currentPlayerValue);
+
+                //colocamos ficha de posicion encima si es posible:
                 return true;
             }
         }
     return false;
 }
-

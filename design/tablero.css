@@ -13,19 +13,31 @@
 .celda{
     width: 70px;
     height: 70px;
-    border: 2px solid black;
-    border-radius: 50%;
+    position: relative;
 }
 
-.red {
+.celda::before{
+    position: absolute;
+    content: '';
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+
+.red::before{
     background-color: #ff4d4d;
 }
 
-.yellow {
+.yellow::before {
     background-color: #ffff66;
 }
 
 
-.test{
-    background-color: green;
+.redhover::before{
+    background-color: #ff4d4d7a;
+}
+.yellowhover::before{
+    background-color: #ffff668a;
 }

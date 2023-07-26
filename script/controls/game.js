@@ -1,13 +1,12 @@
 "use strict";
 
-import { getCols, getRows, getGameBoard, setGameBoard } from "./tablero.js";
-import { getCurrentPlayer, setCurrentPlayer } from "./players.js";
-export {checkWin, resetGame};
+import { getCols, getRows, getGameBoard, setGameBoard} from "../panel/tablero.js";
+import { getCurrentPlayer, setCurrentPlayer} from "../players/players.js";
+
+export {resetGame, checkWin};
 
 const cols = getCols();
 const rows = getRows();
-
-
 
 let gameBoard = getGameBoard();
 // Función para verificar si alguien ha ganado
