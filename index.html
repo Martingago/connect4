@@ -8,15 +8,127 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="design/tablero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div>
-        <h1 class="rounded shadow container my-4">Connect4</h1>
-        <section class="tablero">
 
-        </section>
-        <div>
+    <nav class="navbar bg-body-tertiary sticky-top">
+        <div class="container-fluid justify-content-start">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Elementos -->
+            <ul class="navbar-nav d-flex flex-row gap-3 justify-content-center ms-4">
+                <li class="nav-item">
+                    <a class="fs-5 nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="fs-5 nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="fs-5 nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+            <!-- OffCanvas -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Conecta 4</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Visita mi Portfolio</a>
+                            <a class="nav-link" aria-current="page" href="#">Sobre este proyecto</a>
+                        </li>
+                        <li class="nav-item">
+                            <ul class="navbar-nav justify-content-center gap-3 flex-row flex-grow-1">
+                                <li><a class="nav-link fs-3" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a class="nav-link fs-3" href="#"> <i class="fa-brands fa-github"></i></a></li>
+                                <li> <a class="nav-link fs-3" href="#"> <i class="fa-solid fa-envelope"></i></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tablero -->
+    <section class="tablero rounded shadow p-3">
+    </section>
+
+    <ul>
+        <li>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem optio neque ex possimus placeat officiis
+                suscipit nihil praesentium eum veritatis corporis atque reiciendis totam autem quis, dolore facilis
+                molestias aliquid natus quae labore! Omnis quo tempore quasi, eligendi voluptatum dolor velit corporis
+                libero repellat labore quam nisi harum. Temporibus vel eveniet ducimus cupiditate dolores nulla
+                blanditiis doloribus aspernatur expedita, similique veniam voluptates consequuntur in culpa aliquid
+                dolorum numquam obcaecati recusandae iste laborum natus? Rerum, ipsum suscipit qui, alias iste officiis
+                ex voluptatum molestiae voluptatibus iure provident tempore veniam laborum asperiores perferendis
+                delectus accusamus hic sunt facere voluptatem quo dicta explicabo.</p>
+        </li>
+        <li>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure iste modi fugit placeat sint, natus
+                molestias culpa exercitationem. Asperiores consequatur, incidunt odit soluta culpa saepe vel, molestias
+                enim et sunt possimus, quo inventore recusandae. Libero totam sint sunt, officia eum placeat quas illum
+                corrupti quis pariatur minus, laborum sit explicabo fugiat, fuga reiciendis? Sapiente non ea quisquam
+                fugit sunt velit obcaecati quos modi numquam? Libero modi architecto necessitatibus facilis accusamus
+                similique culpa excepturi repudiandae sapiente nemo expedita soluta, error unde ducimus! Odio eos sed
+                illo maxime eaque quas eveniet provident perferendis ipsa, expedita eligendi temporibus est dignissimos
+                dolor corporis impedit!</p>
+        </li>
+        <li>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem optio neque ex possimus placeat officiis
+                suscipit nihil praesentium eum veritatis corporis atque reiciendis totam autem quis, dolore facilis
+                molestias aliquid natus quae labore! Omnis quo tempore quasi, eligendi voluptatum dolor velit corporis
+                libero repellat labore quam nisi harum. Temporibus vel eveniet ducimus cupiditate dolores nulla
+                blanditiis doloribus aspernatur expedita, similique veniam voluptates consequuntur in culpa aliquid
+                dolorum numquam obcaecati recusandae iste laborum natus? Rerum, ipsum suscipit qui, alias iste officiis
+                ex voluptatum molestiae voluptatibus iure provident tempore veniam laborum asperiores perferendis
+                delectus accusamus hic sunt facere voluptatem quo dicta explicabo.</p>
+        </li>
+        <li>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure iste modi fugit placeat sint, natus
+                molestias culpa exercitationem. Asperiores consequatur, incidunt odit soluta culpa saepe vel, molestias
+                enim et sunt possimus, quo inventore recusandae. Libero totam sint sunt, officia eum placeat quas illum
+                corrupti quis pariatur minus, laborum sit explicabo fugiat, fuga reiciendis? Sapiente non ea quisquam
+                fugit sunt velit obcaecati quos modi numquam? Libero modi architecto necessitatibus facilis accusamus
+                similique culpa excepturi repudiandae sapiente nemo expedita soluta, error unde ducimus! Odio eos sed
+                illo maxime eaque quas eveniet provident perferendis ipsa, expedita eligendi temporibus est dignissimos
+                dolor corporis impedit!</p>
+        </li>
+        <li>
+
+        <li>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem optio neque ex possimus placeat officiis
+                suscipit nihil praesentium eum veritatis corporis atque reiciendis totam autem quis, dolore facilis
+                molestias aliquid natus quae labore! Omnis quo tempore quasi, eligendi voluptatum dolor velit corporis
+                libero repellat labore quam nisi harum. Temporibus vel eveniet ducimus cupiditate dolores nulla
+                blanditiis doloribus aspernatur expedita, similique veniam voluptates consequuntur in culpa aliquid
+                dolorum numquam obcaecati recusandae iste laborum natus? Rerum, ipsum suscipit qui, alias iste officiis
+                ex voluptatum molestiae voluptatibus iure provident tempore veniam laborum asperiores perferendis
+                delectus accusamus hic sunt facere voluptatem quo dicta explicabo.</p>
+        </li>
+        <li>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure iste modi fugit placeat sint, natus
+                molestias culpa exercitationem. Asperiores consequatur, incidunt odit soluta culpa saepe vel, molestias
+                enim et sunt possimus, quo inventore recusandae. Libero totam sint sunt, officia eum placeat quas illum
+                corrupti quis pariatur minus, laborum sit explicabo fugiat, fuga reiciendis? Sapiente non ea quisquam
+                fugit sunt velit obcaecati quos modi numquam? Libero modi architecto necessitatibus facilis accusamus
+                similique culpa excepturi repudiandae sapiente nemo expedita soluta, error unde ducimus! Odio eos sed
+                illo maxime eaque quas eveniet provident perferendis ipsa, expedita eligendi temporibus est dignissimos
+                dolor corporis impedit!</p>
+        </li>
+        <li>
+    </ul>
+    <div>
 
 </body>
 <!-- <script src="/script/testeo.js"></script> -->

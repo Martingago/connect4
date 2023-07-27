@@ -2,11 +2,12 @@
 
 import { getRows, getGameBoard } from "./tablero.js";
 import { getCurrentPlayer } from "../players/players.js";
-export { showNextPreview, handleCellHover, handleCellOutHover}
+import { getVictoria } from "../controls/game.js";
+export { showNextPreview, handleCellHover, handleCellOutHover }
 
 
 const rows = getRows();
-const gameBoard = getGameBoard()
+let gameBoard = getGameBoard()
 
 /**
  * Previsualiza la siguiente posicion de ficha
@@ -17,9 +18,9 @@ const gameBoard = getGameBoard()
  */
 
 const showNextPreview = (col, row) => {
-    if(row-1 >= 0){
+    if (row - 1 >= 0 && !getVictoria()) {
         const playerPreview = getCurrentPlayer() + "hover";
-        const previewNextCell = document.querySelector(`[data-row="${row-1}"][data-column="${col}"]`);
+        const previewNextCell = document.querySelector(`[data-row="${row - 1}"][data-column="${col}"]`);
         previewNextCell.classList.add(playerPreview);
     }
 }
@@ -30,18 +31,20 @@ const showNextPreview = (col, row) => {
  * @param {*} e evento de raton en una ficha
  */
 const handleCellHover = (event) => {
-    let columna = event.target.dataset.column;
-    let currentHover = getCurrentPlayer()+"hover";
-    //Posiciona la previsualizacion en la pimera posicion vertical disponible para el usuario
-    for(let row = rows - 1; row >= 0; row--) {
-        if (!gameBoard[row][columna]) {
-            const cell = document.querySelector(`[data-row="${row}"][data-column="${columna}"]`);
-            cell.classList.add(currentHover);
-            break;
+    if (!getVictoria()) {
+        gameBoard = getGameBoard();
+        let columna = event.target.dataset.column;
+        let currentHover = getCurrentPlayer() + "hover";
+        //Posiciona la previsualizacion en la pimera posicion vertical disponible para el usuario
+        for (let row = rows - 1; row >= 0; row--) {
+            if (!gameBoard[row][columna]) {
+                const cell = document.querySelector(`[data-row="${row}"][data-column="${columna}"]`);
+                cell.classList.add(currentHover);
+                break;
+            }
         }
     }
 }
-
 
 /**
  * Funcion que elimina la previsualizacion cuando se cambia de celda

@@ -1,13 +1,12 @@
 "use strict";
 import { getCurrentPlayer } from "../players/players.js";
 
-export { crearTablero, dropToken, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol}
+export { crearTablero, dropToken, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol }
 
 //Elementos del tablero:
 let rows = 6;
 let cols = 7;
 let gameBoard = [];
-
 let currentRow;
 let currentCol;
 
@@ -48,10 +47,12 @@ const crearTablero = () => {
             celda.classList.add("celda");
             celda.dataset.column = col;
             celda.dataset.row = row;
+            // celda.textContent = `r:${row} c:${col}`
             tablero.appendChild(celda);
             gameBoard[row][col] = null;
         }
     }
+
 }
 
 /**
@@ -61,7 +62,7 @@ const crearTablero = () => {
  */
 const dropToken = (columna) => {
     let currentPlayerValue = getCurrentPlayer();
-    if (columna != undefined)    
+    if (columna != undefined)
         for (let row = rows - 1; row >= 0; row--) {
             if (!gameBoard[row][columna]) { //Si la posicion está vacia devuelve true
                 gameBoard[row][columna] = currentPlayerValue;
@@ -70,9 +71,12 @@ const dropToken = (columna) => {
                 currentRow = Number(row); //valor de la fila en la que se colocó la ficha
                 cell.classList.remove("redhover");
                 cell.classList.remove("yellowhover");
-                cell.classList.add(currentPlayerValue);
+                cell.classList.add(currentPlayerValue, "falling");
 
-                //colocamos ficha de posicion encima si es posible:
+                // Retraso para quitar la clase 'falling' después de la animación
+                setTimeout(() => {
+                    cell.classList.remove("falling");
+                }, 600);
                 return true;
             }
         }
