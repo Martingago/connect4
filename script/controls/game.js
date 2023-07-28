@@ -49,7 +49,6 @@ const checkWin = (row, col) => {
 
 
 const showWinnerLine = (arrayLine) => {
-    console.log("lineaa")
     arrayLine.forEach(element => {
         let ficha = document.querySelector(`[data-row="${element.r}"][data-column="${element.c}"]`);
         ficha.classList.add("test");

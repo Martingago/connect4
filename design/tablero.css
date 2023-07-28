@@ -1,10 +1,10 @@
+/* Ordenadores */
 .tablero {
     margin: auto;
     width: fit-content;
     display: grid;
-    grid-template-columns: repeat(7, auto);
+    
     gap: 7px;
-    padding: 5px;
     align-self: center;
     justify-content: center;
     overflow: hidden;
@@ -19,6 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .celda::after {
@@ -40,9 +41,6 @@
     box-shadow: 2px 2px 6px rgb(27, 45, 243);
 }
 
-
-
-
 .red::after {
     background: rgb(255,131,131);
     background: linear-gradient(131deg, rgba(255,131,131,1) 0%, rgba(234,0,0,1) 100%);
@@ -63,7 +61,7 @@
 }
 
 .test::after {
-    background: rgb(41, 214, 18) !important;
+    background: rgb(41, 214, 18);
 }
 
 
@@ -81,4 +79,34 @@
     to {
         transform: translateY(0);
     }
+}
+/* Tablets y pantallas pequeñas */
+@media screen and (max-width: 720px) {
+    .celda, .celda::before{
+        width: 55px;
+        height: 55px;
+    }
+    .celda::after{
+        width: 53px;
+        height: 53px;
+    }
+}
+
+/* moviles */
+@media screen and (max-width: 480px) {
+    .tablero{
+        gap: 5px;
+        padding:0px;
+    }
+
+    .celda, .celda::before{
+        width: 42px;
+        height: 42px;
+    }
+
+    .celda::after{
+        width: 40px;
+        height: 40px;
+    }
+    
 }

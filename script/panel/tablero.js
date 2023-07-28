@@ -1,11 +1,11 @@
 "use strict";
 import { getCurrentPlayer } from "../players/players.js";
 
-export { crearTablero, dropToken, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol }
+export { crearTablero, dropToken, checkTableroEmpty, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol }
 
 //Elementos del tablero:
-let rows = 6;
-let cols = 7;
+let rows = 3;
+let cols = 3;
 let gameBoard = [];
 let currentRow;
 let currentCol;
@@ -49,10 +49,20 @@ const crearTablero = () => {
             celda.dataset.row = row;
             // celda.textContent = `r:${row} c:${col}`
             tablero.appendChild(celda);
+            tablero.style.gridTemplateColumns = `repeat(${cols}, auto)`;
             gameBoard[row][col] = null;
         }
     }
+}
 
+
+/**
+ * Recorre los datos del ultimo array disponible del tablero.
+ * En caso de existir un espacio vacio "null" nos indicará que queda almenos 1 hueco disponible para el usuario
+ * @returns true en caso de almenos 1 posicion vacia => null, y false en caso de que no existan posiciones vacias => no existen null
+ */
+const checkTableroEmpty = () => {
+    return gameBoard[0].some(element => element === null);
 }
 
 /**
