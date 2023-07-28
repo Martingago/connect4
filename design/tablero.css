@@ -1,3 +1,9 @@
+.container-tablero-juego{
+    width: max-content;
+    margin: auto;
+}
+
+
 /* Ordenadores */
 .tablero {
     margin: auto;

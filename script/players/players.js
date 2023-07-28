@@ -5,8 +5,7 @@ export {switchCurrentPlayer, getCurrentPlayer, setCurrentPlayer}
 
 let currentPlayer = 'red'; //valor inicial del jugador
 
-const redColor = "rgb(255,131,131)";
-const yellowColor = "rgb(255,255,115)";
+
 
 const txtTurnPlayer = document.querySelector(".player-turn-txt");
 const getCurrentPlayer = () => {
@@ -21,11 +20,6 @@ const setCurrentPlayer = (newPlayer) => {
 const switchCurrentPlayer = () => {
     currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';
     txtTurnPlayer.textContent = currentPlayer;
-    if(currentPlayer === 'red'){
-        txtTurnPlayer.style.color = redColor;
-    }else{
-        txtTurnPlayer.style.color = yellowColor;
-    }
 }
 
 

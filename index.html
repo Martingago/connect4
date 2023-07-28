@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connect 4</title>
 
+    <link rel="stylesheet" href="design/reset.css">
     <link rel="stylesheet" href="design/tablero.css">
     <link rel="stylesheet" href="design/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -63,21 +64,39 @@
             </div>
         </nav>
         <!-- Tablero -->
-        <div class="container-tablero-juego">
+        <div class="container-tablero-juego d-flex flex-column gap-2">
             <section class="tablero rounded shadow p-2 p-md-3">
                 
             </section>
-            <span class="d-flex gap-4">
-                <p class="fs-2">Turno de: </p> <p class="player-turn-txt fs-4 shadow rounded bg-color-blue">Jugador</p>
+            <span class="d-flex justify-content-start align-items-center gap-4 ">
+                <p class="fs-4">Turno de: </p> <p class="player-turn-txt fs-4 shadow rounded px-3 --bs-info"> Jugador 1 </p>
             </span>
         </div>
 
-
-
-
-        <aside>
-
-        </aside>
+        <aside class="score-user d-flex rounded border">
+            <div class="col-6 border">
+              <h4 class="border-bottom border-right">Jugador</h4>
+              <span class="d-flex gap-2 border-bottom border-right">
+                  <p>Jugador1</p>
+                  <img class="svg-player-score" src="img/user-red-icon.svg" alt="imagen del jugador rojo">
+              </span>
+              <span class="d-flex gap-2">
+                  <p>Jugador2</p>
+                  <img class="svg-player-score" src="img/user-yellow-icon.svg" alt="imagen del jugador amarillo">
+              </span>
+            </div>
+            <div class="col-6 border">
+              <h4 class="border-bottom">Puntuación</h4>
+              <span class="d-flex gap-2 border-bottom">
+                  <p>0</p>
+                  <img class="svg-player-score" src="img/crown-svgrepo-com.svg" alt="corona que indica las victorias de cada jugador">
+              </span>
+              <span class="d-flex gap-2">
+                  <p>0</p>
+                  <img class="svg-player-score" src="img/crown-svgrepo-com.svg" alt="corona que indica las victorias de cada jugador">
+              </span>
+            </div>
+          </aside>
 
 
         <ul>

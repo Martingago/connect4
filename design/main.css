@@ -11,7 +11,26 @@
 }
 
 .player-turn-txt{
-    text-transform: capitalize;
     width: 200px;
-    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    background-color: rgb(0, 212, 255);
+    font-weight: 700;
 }
+
+.player-winner-name{
+    text-transform: capitalize;
+}
+
+.score-user{
+    width: 300px;
+}
+
+.score-user h4, .score-user p{
+    margin-bottom: .25rem;
+}
+.svg-player-score{
+    width: 22px;
+}    

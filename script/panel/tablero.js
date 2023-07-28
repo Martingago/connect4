@@ -4,8 +4,8 @@ import { getCurrentPlayer } from "../players/players.js";
 export { crearTablero, dropToken, checkTableroEmpty, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol }
 
 //Elementos del tablero:
-let rows = 3;
-let cols = 3;
+let rows = 6;
+let cols = 7;
 let gameBoard = [];
 let currentRow;
 let currentCol;
