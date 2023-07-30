@@ -1,15 +1,9 @@
-.container-tablero-juego{
-    width: max-content;
-    margin: auto;
-}
-
 
 /* Ordenadores */
 .tablero {
     margin: auto;
     width: fit-content;
-    display: grid;
-    
+    display: grid; 
     gap: 7px;
     align-self: center;
     justify-content: center;

@@ -1,7 +1,7 @@
 "use strict";
 
 import { getCols, getRows, getGameBoard, setGameBoard } from "../panel/tablero.js";
-import { getCurrentPlayer, setCurrentPlayer } from "../players/players.js";
+import { player1, player2, getCurrentPlayerTest, setCurrentPlayer } from "../players/players.js";
 
 export { resetGame, checkWin, showWinnerLine, getVictoria };
 
@@ -29,7 +29,7 @@ const checkWin = (row, col) => {
             let r = row + sign * dx;
             let c = col + sign * dy;
 
-            while (r >= 0 && r < rows && c >= 0 && c < cols && gameBoard[r][c] === getCurrentPlayer()) {
+            while (r >= 0 && r < rows && c >= 0 && c < cols && gameBoard[r][c] === getCurrentPlayerTest()._color) {
                 linePositions.push({ r, c })
                 count++;
                 r += sign * dx;
@@ -52,24 +52,26 @@ const showWinnerLine = (arrayLine) => {
     arrayLine.forEach(element => {
         let ficha = document.querySelector(`[data-row="${element.r}"][data-column="${element.c}"]`);
         ficha.classList.add("test");
-        setInterval(() => {
-            ficha.classList.toggle("test")
+        let animation = setInterval(() => {
+            ficha.classList.toggle("test");
+            if (!victoria) {
+                clearTimeout(animation)
+                ficha.classList.remove("test");
+            };
         }, 750);
     });
 }
 
-
-
-
 // Función para reiniciar el juego
 const resetGame = () => {
+    victoria = false;
     const cells = document.querySelectorAll('.celda');
     cells.forEach(cell => {
         cell.classList.remove('red', 'yellow');
     });
     gameBoard = gameBoard.map(row => row.map(() => null));
     setGameBoard(gameBoard);
-    setCurrentPlayer('red'); //restablece el valor del jugador inicial en RED
+    setCurrentPlayer(player1);
 }
 
 

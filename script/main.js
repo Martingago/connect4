@@ -2,7 +2,7 @@
 
 import { crearTablero, dropToken, checkTableroEmpty, getCurrentCol, getCurrentRow } from "./panel/tablero.js";
 import { checkWin, getVictoria, resetGame, showWinnerLine } from "./controls/game.js";
-import { getCurrentPlayer, switchCurrentPlayer } from "./players/players.js";
+import { getCurrentPlayerTest, switchCurrentPlayerTest, nextTurnPlayerTxt} from "./players/players.js";
 import { handleCellHover, handleCellOutHover, showNextPreview } from "./panel/tokenPreview.js";
 
 import { drawGame, showModalGame, winnerPlayer } from "./panel/gameModalContent.js";
@@ -33,19 +33,27 @@ const handleCellClick = (event) => {
             }
             //Continua la partida
             else {
-                switchCurrentPlayer();
-                showNextPreview(currentCol, currentRow)
+                switchCurrentPlayerTest(); 
+                showNextPreview(currentCol, currentRow);
+                nextTurnPlayerTxt();
+
             }
         }
     }
 }
 tablero.addEventListener("click", handleCellClick);
 
-
-
 const ficha = document.querySelectorAll(".celda");
 
 ficha.forEach(element => {
     element.addEventListener("mouseenter", handleCellHover);
     element.addEventListener("mouseleave", handleCellOutHover)
+})
+
+//Reinicia la partida con el boton:
+
+const btnReiniciarPartida = document.querySelector(".btn-restart-game");
+
+btnReiniciarPartida.addEventListener("click", () => {
+    resetGame();
 })

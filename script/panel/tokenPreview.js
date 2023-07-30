@@ -1,7 +1,7 @@
 "Use strict";
 
 import { getRows, getGameBoard } from "./tablero.js";
-import { getCurrentPlayer } from "../players/players.js";
+import { getCurrentPlayerTest } from "../players/players.js";
 import { getVictoria } from "../controls/game.js";
 export { showNextPreview, handleCellHover, handleCellOutHover }
 
@@ -19,7 +19,7 @@ let gameBoard = getGameBoard()
 
 const showNextPreview = (col, row) => {
     if (row - 1 >= 0 && !getVictoria()) {
-        const playerPreview = getCurrentPlayer() + "hover";
+        const playerPreview = getCurrentPlayerTest()._color + "hover";
         const previewNextCell = document.querySelector(`[data-row="${row - 1}"][data-column="${col}"]`);
         previewNextCell.classList.add(playerPreview);
     }
@@ -34,7 +34,7 @@ const handleCellHover = (event) => {
     if (!getVictoria()) {
         gameBoard = getGameBoard();
         let columna = event.target.dataset.column;
-        let currentHover = getCurrentPlayer() + "hover";
+        let currentHover = getCurrentPlayerTest()._color + "hover";
         //Posiciona la previsualizacion en la pimera posicion vertical disponible para el usuario
         for (let row = rows - 1; row >= 0; row--) {
             if (!gameBoard[row][columna]) {

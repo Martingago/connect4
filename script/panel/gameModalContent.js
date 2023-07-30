@@ -1,7 +1,7 @@
 "use strict";
 
 export { drawGame, winnerPlayer, showModalGame }
-import { getCurrentPlayer } from "../players/players.js";
+import { getCurrentPlayerTest } from "../players/players.js";
 import { resetGame } from "../controls/game.js";
 
 const playerTxtWinner = document.querySelector(".player-winner-name");
@@ -36,7 +36,8 @@ const drawGame = () => {
 
 //GANA UN JUGADOR
 const winnerPlayer = () => {
-    playerTxtWinner.textContent = `${getCurrentPlayer()}`;
+    const currentPlayerData = getCurrentPlayerTest();
+    playerTxtWinner.textContent = currentPlayerData._nombre;
     imgSrcModal.src = 'img/trophy-victory-player.png';
     imgSrcModal.alt = "Imagen de un trofeo que simboliza que uno de los jugadores ha ganado la partida";
     resultadoGame.textContent = "Gana la partida";

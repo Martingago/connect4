@@ -63,158 +63,103 @@
                 </div>
             </div>
         </nav>
-        <!-- Tablero -->
-        <div class="container-tablero-juego d-flex flex-column gap-2">
-            <section class="tablero rounded shadow p-2 p-md-3">
-                
-            </section>
-            <span class="d-flex justify-content-start align-items-center gap-4 ">
-                <p class="fs-4">Turno de: </p> <p class="player-turn-txt fs-4 shadow rounded px-3 --bs-info"> Jugador 1 </p>
-            </span>
+
+        <div class="d-flex flex-column flex-lg-row align-items-start align-self-center gap-3">
+            <!-- Tablero -->
+            <div class="container-tablero-juego d-flex flex-column gap-2">
+                <section class="tablero rounded shadow p-2 p-md-3">
+                </section>
+
+                <button type="button" class=" btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#resetGameModal">Reiniciar Partida <i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+
+            <!-- Tabla de puntos -->
+            <aside class="score-user d-flex gap-2 flex-column rounded">
+                <!-- columna izquierda -->
+                <div class="d-flex">
+                    <div class="col-6 border">
+                        <h4 class="border-bottom border-right text-center">Jugador</h4>
+                        <span class="d-flex gap-1 border-bottom border-right">
+                            <img class="svg-player-score" src="img/user-red-icon.svg" alt="imagen del jugador rojo">
+                            <p class="p-player-name-1">Jugador1</p>
+                        </span>
+                        <span class="d-flex gap-1">
+                            <img class="svg-player-score" src="img/user-yellow-icon.svg"
+                                alt="imagen del jugador amarillo">
+                            <p class="p-player-name-2">Jugador2</p>
+                        </span>
+                    </div>
+                    <!-- columna derecha -->
+                    <div class="col-6 border">
+                        <h4 class="border-bottom text-center">Puntuación</h4>
+                        <span class="d-flex gap-1 border-bottom">
+                            <p class="p-user-score">0</p>
+                            <img class="svg-player-score" src="img/crown-svgrepo-com.svg"
+                                alt="corona que indica las victorias de cada jugador">
+                        </span>
+                        <span class="d-flex gap-1">
+                            <p class="p-user-score">0</p>
+                            <img class="svg-player-score" src="img/crown-svgrepo-com.svg"
+                                alt="corona que indica las victorias de cada jugador">
+                        </span>
+                    </div>
+                </div>
+
+                <span class="d-flex justify-content-between ">
+                    <p>Turno de: </p>
+                    <p class="player-turn-txt bg-body-tertiary border-1 rounded"> default </p>
+                </span>
+            </aside>
+
         </div>
 
-        <aside class="score-user d-flex rounded border">
-            <div class="col-6 border">
-              <h4 class="border-bottom border-right">Jugador</h4>
-              <span class="d-flex gap-2 border-bottom border-right">
-                  <p>Jugador1</p>
-                  <img class="svg-player-score" src="img/user-red-icon.svg" alt="imagen del jugador rojo">
-              </span>
-              <span class="d-flex gap-2">
-                  <p>Jugador2</p>
-                  <img class="svg-player-score" src="img/user-yellow-icon.svg" alt="imagen del jugador amarillo">
-              </span>
-            </div>
-            <div class="col-6 border">
-              <h4 class="border-bottom">Puntuación</h4>
-              <span class="d-flex gap-2 border-bottom">
-                  <p>0</p>
-                  <img class="svg-player-score" src="img/crown-svgrepo-com.svg" alt="corona que indica las victorias de cada jugador">
-              </span>
-              <span class="d-flex gap-2">
-                  <p>0</p>
-                  <img class="svg-player-score" src="img/crown-svgrepo-com.svg" alt="corona que indica las victorias de cada jugador">
-              </span>
-            </div>
-          </aside>
-
-
-        <ul>
-            <li>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem optio neque ex possimus placeat
-                    officiis
-                    suscipit nihil praesentium eum veritatis corporis atque reiciendis totam autem quis, dolore facilis
-                    molestias aliquid natus quae labore! Omnis quo tempore quasi, eligendi voluptatum dolor velit
-                    corporis
-                    libero repellat labore quam nisi harum. Temporibus vel eveniet ducimus cupiditate dolores nulla
-                    blanditiis doloribus aspernatur expedita, similique veniam voluptates consequuntur in culpa aliquid
-                    dolorum numquam obcaecati recusandae iste laborum natus? Rerum, ipsum suscipit qui, alias iste
-                    officiis
-                    ex voluptatum molestiae voluptatibus iure provident tempore veniam laborum asperiores perferendis
-                    delectus accusamus hic sunt facere voluptatem quo dicta explicabo.</p>
-            </li>
-            <li>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure iste modi fugit placeat sint, natus
-                    molestias culpa exercitationem. Asperiores consequatur, incidunt odit soluta culpa saepe vel,
-                    molestias
-                    enim et sunt possimus, quo inventore recusandae. Libero totam sint sunt, officia eum placeat quas
-                    illum
-                    corrupti quis pariatur minus, laborum sit explicabo fugiat, fuga reiciendis? Sapiente non ea
-                    quisquam
-                    fugit sunt velit obcaecati quos modi numquam? Libero modi architecto necessitatibus facilis
-                    accusamus
-                    similique culpa excepturi repudiandae sapiente nemo expedita soluta, error unde ducimus! Odio eos
-                    sed
-                    illo maxime eaque quas eveniet provident perferendis ipsa, expedita eligendi temporibus est
-                    dignissimos
-                    dolor corporis impedit!</p>
-            </li>
-            <li>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem optio neque ex possimus placeat
-                    officiis
-                    suscipit nihil praesentium eum veritatis corporis atque reiciendis totam autem quis, dolore facilis
-                    molestias aliquid natus quae labore! Omnis quo tempore quasi, eligendi voluptatum dolor velit
-                    corporis
-                    libero repellat labore quam nisi harum. Temporibus vel eveniet ducimus cupiditate dolores nulla
-                    blanditiis doloribus aspernatur expedita, similique veniam voluptates consequuntur in culpa aliquid
-                    dolorum numquam obcaecati recusandae iste laborum natus? Rerum, ipsum suscipit qui, alias iste
-                    officiis
-                    ex voluptatum molestiae voluptatibus iure provident tempore veniam laborum asperiores perferendis
-                    delectus accusamus hic sunt facere voluptatem quo dicta explicabo.</p>
-            </li>
-            <li>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure iste modi fugit placeat sint, natus
-                    molestias culpa exercitationem. Asperiores consequatur, incidunt odit soluta culpa saepe vel,
-                    molestias
-                    enim et sunt possimus, quo inventore recusandae. Libero totam sint sunt, officia eum placeat quas
-                    illum
-                    corrupti quis pariatur minus, laborum sit explicabo fugiat, fuga reiciendis? Sapiente non ea
-                    quisquam
-                    fugit sunt velit obcaecati quos modi numquam? Libero modi architecto necessitatibus facilis
-                    accusamus
-                    similique culpa excepturi repudiandae sapiente nemo expedita soluta, error unde ducimus! Odio eos
-                    sed
-                    illo maxime eaque quas eveniet provident perferendis ipsa, expedita eligendi temporibus est
-                    dignissimos
-                    dolor corporis impedit!</p>
-            </li>
-            <li>
-            <li>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem optio neque ex possimus placeat
-                    officiis
-                    suscipit nihil praesentium eum veritatis corporis atque reiciendis totam autem quis, dolore facilis
-                    molestias aliquid natus quae labore! Omnis quo tempore quasi, eligendi voluptatum dolor velit
-                    corporis
-                    libero repellat labore quam nisi harum. Temporibus vel eveniet ducimus cupiditate dolores nulla
-                    blanditiis doloribus aspernatur expedita, similique veniam voluptates consequuntur in culpa aliquid
-                    dolorum numquam obcaecati recusandae iste laborum natus? Rerum, ipsum suscipit qui, alias iste
-                    officiis
-                    ex voluptatum molestiae voluptatibus iure provident tempore veniam laborum asperiores perferendis
-                    delectus accusamus hic sunt facere voluptatem quo dicta explicabo.</p>
-            </li>
-            <li>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure iste modi fugit placeat sint, natus
-                    molestias culpa exercitationem. Asperiores consequatur, incidunt odit soluta culpa saepe vel,
-                    molestias
-                    enim et sunt possimus, quo inventore recusandae. Libero totam sint sunt, officia eum placeat quas
-                    illum
-                    corrupti quis pariatur minus, laborum sit explicabo fugiat, fuga reiciendis? Sapiente non ea
-                    quisquam
-                    fugit sunt velit obcaecati quos modi numquam? Libero modi architecto necessitatibus facilis
-                    accusamus
-                    similique culpa excepturi repudiandae sapiente nemo expedita soluta, error unde ducimus! Odio eos
-                    sed
-                    illo maxime eaque quas eveniet provident perferendis ipsa, expedita eligendi temporibus est
-                    dignissimos
-                    dolor corporis impedit!</p>
-            </li>
-            <li>
-        </ul>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content position-relative ">
-                        <button type="button" class="btn-close position-absolute top-0 end-0 p-2 shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <div class="modal-body m-auto ">
-                            <p class="fs-4 text-center m-auto">Woooooohoo</p>
-                            <h3 class="player-winner-name modal-title fs-1 text-center" id="exampleModalLabel">Default</h3>
-                            <img class="modal-win-img mx-auto" src="img/img-placeholder-web.png" alt="Imagen sin especificar, placeholder web">
-                            <p class="resultado-players fs-3 text-center m-auto">Default txt</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ver resultado</button>
-                            <button type="button" class="btn-restart-modal btn btn-primary">Revancha</button>
-                        </div>
+      
+        <!-- Modal Victoria de jugador-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content position-relative ">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 p-2 shadow-none"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body m-auto ">
+                        <p class="fs-4 text-center m-auto">Woooooohoo</p>
+                        <h3 class="player-winner-name modal-title fs-1 text-center" id="exampleModalLabel">Default</h3>
+                        <img class="modal-win-img mx-auto" src="img/img-placeholder-web.png"
+                            alt="Imagen sin especificar, placeholder web">
+                        <p class="resultado-players fs-3 text-center m-auto">Default txt</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ver resultado</button>
+                        <button type="button" class="btn-restart-modal btn btn-primary">Revancha</button>
                     </div>
                 </div>
             </div>
+        </div>
+
+
+        <!-- Modal reiniciar partida -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="resetGameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content position-relative">
+                        
+                    <div class="modal-body">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <p class="text-center fs-4 mt-3 mb-0 fw-800 p-auto">¿Seguro que quieres reiniciar la partida?</p>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn-restart-game btn btn-secondary" data-bs-dismiss="modal">Reiniciar <i class="fa-solid fa-rotate-right"></i></button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 
 </body>
-<!-- <script src="/script/testeo.js"></script> -->
 <script type="module" src="script/main.js"></script>
 
 
