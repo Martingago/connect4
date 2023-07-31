@@ -8,11 +8,13 @@
 
 .modal-win-img{
     max-width: 250px;
+    margin: auto;
 }
 
 .player-turn-txt{
     padding: .25rem;
     width: 200px;
+    text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -24,28 +26,18 @@
     text-transform: capitalize;
 }
 
-.score-user{
-    width: 300px;
-}
+    
 
-.score-user h4, .score-user p{
-    margin-bottom: .25rem;
-    margin-left: .25rem;
-}
-.svg-player-score{
-    margin-left: .25rem;
-    width: 22px;
-}    
-
-.p-player-name{
-    width: 110px;
+.p-player-name-1 , .p-player-name-2{
+    width: 120px;
+    text-align: center;
+    text-transform: uppercase;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-transform: capitalize;
+    
 }
 
 .p-user-score{
-    width: 20px;
-    text-align: right;
+    font-weight: 600;
 }

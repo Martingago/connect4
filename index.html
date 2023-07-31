@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="design/reset.css">
     <link rel="stylesheet" href="design/tablero.css">
     <link rel="stylesheet" href="design/main.css">
+    <link rel="stylesheet" href="design/tableroContainer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -64,67 +65,66 @@
             </div>
         </nav>
 
-        <div class="d-flex flex-column flex-lg-row align-items-start align-self-center gap-3">
+
+        <!-- d-flex flex-column flex-lg-row align-items-start align-self-center gap-3 -->
+        <div class="tablero-container">
             <!-- Tablero -->
             <div class="container-tablero-juego d-flex flex-column gap-2">
-                <section class="tablero rounded shadow p-2 p-md-3">
+                <section class="tablero border border-3 border-dark">
                 </section>
+                <div class="section-turn-player d-flex flex-column justify-content-center align-items-center">
+                    <p class="m-0">Turno de: </p>
+                    <p class="player-turn-txt"> default </p>
+                    <svg width="100" height="75" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Rectángulo con bordes redondeados -->
+                        <rect width="100" height="50" rx="10" ry="10" fill="#3498db" />
+                      
+                        <!-- Triángulo sin borde inferior -->
+                        <polygon points="0,50 50,25 100,50" fill="#3498db" stroke="none" />
+                      
+                        <!-- Borde del pentágono -->
+                        <polygon points="5,50 50,10 95,50 95,75 5,75" fill="none" stroke="#000" stroke-width="2" />
+                      </svg>
+                      
+                      
+                </div>
 
                 <button type="button" class=" btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#resetGameModal">Reiniciar Partida <i class="fa-solid fa-rotate-right"></i></button>
             </div>
 
-            <!-- Tabla de puntos -->
-            <aside class="score-user d-flex gap-2 flex-column rounded">
-                <!-- columna izquierda -->
-                <div class="d-flex">
-                    <div class="col-6 border">
-                        <h4 class="border-bottom border-right text-center">Jugador</h4>
-                        <span class="d-flex gap-1 border-bottom border-right">
-                            <img class="svg-player-score" src="img/user-red-icon.svg" alt="imagen del jugador rojo">
-                            <p class="p-player-name-1">Jugador1</p>
-                        </span>
-                        <span class="d-flex gap-1">
-                            <img class="svg-player-score" src="img/user-yellow-icon.svg"
-                                alt="imagen del jugador amarillo">
-                            <p class="p-player-name-2">Jugador2</p>
-                        </span>
-                    </div>
-                    <!-- columna derecha -->
-                    <div class="col-6 border">
-                        <h4 class="border-bottom text-center">Puntuación</h4>
-                        <span class="d-flex gap-1 border-bottom">
-                            <p class="p-user-score">0</p>
-                            <img class="svg-player-score" src="img/crown-svgrepo-com.svg"
-                                alt="corona que indica las victorias de cada jugador">
-                        </span>
-                        <span class="d-flex gap-1">
-                            <p class="p-user-score">0</p>
-                            <img class="svg-player-score" src="img/crown-svgrepo-com.svg"
-                                alt="corona que indica las victorias de cada jugador">
-                        </span>
-                    </div>
-                </div>
+            <!-- columna izquierda -->
+            <div class="element-player-1 d-flex flex-row flex-lg-column align-items-center justify-content-around p-1 border border-3 border-dark">
+                <img class="svg-player-score" src="img/user-red-icon.svg" alt="imagen del jugador rojo">
 
-                <span class="d-flex justify-content-between ">
-                    <p>Turno de: </p>
-                    <p class="player-turn-txt bg-body-tertiary border-1 rounded"> default </p>
+                <span class="d-flex flex-column flex-md-row flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
+                    <p class="p-player-name-1 mb-0">Jugador1</p>
+                    <p class="p-user-score fs-3 mb-1">0</p>
                 </span>
-            </aside>
+            </div>
 
+            <!-- Columna derecha -->
+            <div class="element-player-2 d-flex flex-row-reverse flex-lg-column align-items-center justify-content-around p-1 border border-3 border-dark">
+                <img class="svg-player-score" src="img/user-yellow-icon.svg"
+                    alt="imagen del jugador rojo">
+
+                <span class="d-flex flex-column flex-md-row-reverse flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
+                    <p class="p-player-name-2 mb-0">Jugador2</p>
+                    <p class="p-user-score fs-3 mb-1">10</p>
+                </span>
+            </div>
         </div>
-
-      
+    
         <!-- Modal Victoria de jugador-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content position-relative ">
                     <button type="button" class="btn-close position-absolute top-0 end-0 p-2 shadow-none"
                         data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-body m-auto ">
+                    <div class="modal-body m-auto d-flex flex-column justify-content-center align-items-center">
                         <p class="fs-4 text-center m-auto">Woooooohoo</p>
                         <h3 class="player-winner-name modal-title fs-1 text-center" id="exampleModalLabel">Default</h3>
-                        <img class="modal-win-img mx-auto" src="img/img-placeholder-web.png"
+                        <img class="modal-win-img" src="img/img-placeholder-web.png"
                             alt="Imagen sin especificar, placeholder web">
                         <p class="resultado-players fs-3 text-center m-auto">Default txt</p>
                     </div>
@@ -140,17 +140,22 @@
         <!-- Modal reiniciar partida -->
 
         <!-- Modal -->
-        <div class="modal fade" id="resetGameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="resetGameModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content position-relative">
-                        
+
                     <div class="modal-body">
-                        <button type="button" class="btn-close position-absolute top-0 end-0 p-2" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <p class="text-center fs-4 mt-3 mb-0 fw-800 p-auto">¿Seguro que quieres reiniciar la partida?</p>
+                        <button type="button" class="btn-close position-absolute top-0 end-0 p-2"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        <p class="text-center fs-4 mt-3 mb-0 fw-800 p-auto">¿Seguro que quieres reiniciar la partida?
+                        </p>
                     </div>
                     <div class="modal-footer border-0">
-                        <button type="button" class="btn-restart-game btn btn-secondary" data-bs-dismiss="modal">Reiniciar <i class="fa-solid fa-rotate-right"></i></button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                        <button type="button" class="btn-restart-game btn btn-secondary"
+                            data-bs-dismiss="modal">Reiniciar <i class="fa-solid fa-rotate-right"></i></button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar <i
+                                class="fa-solid fa-arrow-right-from-bracket"></i></button>
                     </div>
                 </div>
             </div>
