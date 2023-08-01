@@ -4,7 +4,7 @@ import { crearTablero, dropToken, checkTableroEmpty, getCurrentCol, getCurrentRo
 import { checkWin, getVictoria, resetGame, showWinnerLine } from "./controls/game.js";
 import { getCurrentPlayerTest, switchCurrentPlayerTest, nextTurnPlayerTxt} from "./players/players.js";
 import { handleCellHover, handleCellOutHover, showNextPreview } from "./panel/tokenPreview.js";
-
+import { crearListaAvatares } from "./players/avatarImages.js";
 import { drawGame, showModalGame, winnerPlayer } from "./panel/gameModalContent.js";
 
 const tablero = document.querySelector(".tablero");
@@ -53,7 +53,10 @@ ficha.forEach(element => {
 //Reinicia la partida con el boton:
 
 const btnReiniciarPartida = document.querySelector(".btn-restart-game");
-
 btnReiniciarPartida.addEventListener("click", () => {
     resetGame();
 })
+
+//Lista de avatares:
+
+crearListaAvatares();

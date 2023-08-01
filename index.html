@@ -81,7 +81,7 @@
                 <!-- columna izquierda -->
                 <div
                     class="element-player-1 d-flex flex-row flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
-                    <img class="svg-player-score" src="img/user-red-icon.svg" alt="imagen del jugador rojo">
+                    <img class="svg-player-score avatar-player-1" src="img/user-red-icon.svg" alt="imagen del jugador rojo">
                     <span
                         class="d-flex flex-column flex-md-row flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
                         <p class="p-player-name-1 mb-0">Jugador1</p>
@@ -91,7 +91,7 @@
                 <!-- Columna derecha -->
                 <div
                     class="element-player-2 d-flex flex-row-reverse flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
-                    <img class="svg-player-score" src="img/user-yellow-icon.svg" alt="imagen del jugador rojo">
+                    <img class="svg-player-score avatar-player-2" src="img/user-yellow-icon.svg" alt="imagen del jugador rojo">
                     <span
                         class="d-flex flex-column flex-md-row-reverse flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
                         <p class="p-player-name-2 mb-0">Jugador2</p>
@@ -135,8 +135,8 @@
                         <div class="d-flex align-items-center gap-2">
                             <!-- Selector de avatar -->
                             <span class="d-flex flex-column justify-content-center align-items-center gap-1">
-                                <img class="svg-player" src="img/user-red-icon.svg" alt="Icono del jugador rojo">
-                                <button type="button" class="btn btn-primary" id="selectAvatarBtn" data-bs-toggle="collapse" data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
+                                <img class="svg-player avatar-player-1" src="img/user-red-icon.svg" alt="Icono del jugador rojo">
+                                <button type="button" class="btn btn-primary" id="selectAvatarBtn"  data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
                                     Editar
                                 </button>
                             </span>
@@ -146,8 +146,15 @@
                                     aria-label="default input example">
                             </span>
                         </div>
+                        <!-- Usuario 2 -->
                         <div class="d-flex flex-row-reverse align-items-center gap-2">
-                            <img class="svg-player" src="img/user-yellow-icon.svg" alt="Icono del jugador Amarillo">
+                            <!-- selector de avatar -->
+                            <span class="d-flex flex-column justify-content-center align-items-center gap-1">
+                                <img class="svg-player avatar-player-2" src="img/user-yellow-icon.svg" alt="Icono del jugador Amarillo">
+                                <button type="button" class="btn btn-primary" id="selectAvatarBtn2" data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
+                                    Editar
+                                </button>
+                            </span>
                             <span class="d-flex flex-column align-items-center justify-content-center">
                                 <h3>Jugador 2</h3>
                                 <input class="form-control" type="text" placeholder="Jugador 2"
@@ -157,19 +164,14 @@
 
                     </div>
 
-                    <div class="collapse" id="avatarOptions">
-                        <div class=" container-avatar-elements">
+                    <div class="" id="avatarOptions">
+                        <div class="container-avatar-elements">
                             <!-- Aquí colocarás las imágenes de los avatares para que los usuarios puedan seleccionar -->
-                            <img class="avatar" src="img/avatar/bear-user-avatar.png" alt="Avatar 1" data-avatar="img/avatar/bear-user-avatar.png">
-                            <img class="avatar" src="img/avatar/chicken-user-avatar.png" alt="Avatar 2" data-avatar="img/avatar/chicken-user-avatar.png">
-                            <img class="avatar" src="img/avatar/dog-user-avatar.png" alt="Avatar 3" data-avatar="img/avatar/dog-user-avatar.png">
-                            <img class="avatar" src="img/avatar/giraffe-user-avatar.png" alt="Avatar 4" data-avatar="img/avatar/giraffe-user-avatar.png">
-                            <img class="avatar" src="img/avatar/panda-user-avatar.png" alt="Avatar 5" data-avatar="img/avatar/panda-user-avatar.png">
                         </div>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar</button>
+                        <button type="button" class="btn btn-secondary" id="btnConfirmAvatar" data-bs-dismiss="modal">Continuar</button>
                     </div>
                 </div>
             </div>
