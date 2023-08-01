@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connect 4</title>
 
-    <link rel="stylesheet" href="design/reset.css">
-    <link rel="stylesheet" href="design/tablero.css">
-    <link rel="stylesheet" href="design/main.css">
-    <link rel="stylesheet" href="design/tableroContainer.css">
+    <link rel="stylesheet" href="style/design/reset.css">
+    <link rel="stylesheet" href="style/design/tablero.css">
+    <link rel="stylesheet" href="style/design/main.css">
+    <link rel="stylesheet" href="style/design/tableroContainer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -19,6 +19,8 @@
 
 <body>
     <div class="page-container">
+
+        <!-- Navegador web -->
         <nav class="navbar bg-body-tertiary sticky-top">
             <div class="container-fluid justify-content-start">
                 <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
@@ -66,55 +68,118 @@
         </nav>
 
 
-        <!-- d-flex flex-column flex-lg-row align-items-start align-self-center gap-3 -->
-        <div class="tablero-container">
-            <!-- Tablero -->
-            <div class="container-tablero-juego d-flex flex-column gap-2">
-                <section class="tablero border border-3 border-dark">
-                </section>
-                <div class="section-turn-player d-flex flex-column justify-content-center align-items-center">
-                    <p class="m-0">Turno de: </p>
-                    <p class="player-turn-txt"> default </p>
-                    <svg width="100" height="75" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Rectángulo con bordes redondeados -->
-                        <rect width="100" height="50" rx="10" ry="10" fill="#3498db" />
-                      
-                        <!-- Triángulo sin borde inferior -->
-                        <polygon points="0,50 50,25 100,50" fill="#3498db" stroke="none" />
-                      
-                        <!-- Borde del pentágono -->
-                        <polygon points="5,50 50,10 95,50 95,75 5,75" fill="none" stroke="#000" stroke-width="2" />
-                      </svg>
-                      
-                      
+        <!-- Seccion principal de la web: Tablero, puntuaciones, turno  -->
+        <div class="section-connect4-game d-flex flex-column justify-content-start align-items-center">
+            <h2 class="title-game-connect4"><span class="logo-letter">Connect</span><span class="logo-number">4</span>
+            </h2>
+            <div class="tablero-container">
+                <!-- Tablero -->
+                <div class="container-tablero-juego d-flex flex-column gap-2">
+                    <section class="tablero border border-3 border-dark">
+                    </section>
                 </div>
-
-                <button type="button" class=" btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#resetGameModal">Reiniciar Partida <i class="fa-solid fa-rotate-right"></i></button>
+                <!-- columna izquierda -->
+                <div
+                    class="element-player-1 d-flex flex-row flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
+                    <img class="svg-player-score" src="img/user-red-icon.svg" alt="imagen del jugador rojo">
+                    <span
+                        class="d-flex flex-column flex-md-row flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
+                        <p class="p-player-name-1 mb-0">Jugador1</p>
+                        <p class="p-user-score fs-3 mb-1">0</p>
+                    </span>
+                </div>
+                <!-- Columna derecha -->
+                <div
+                    class="element-player-2 d-flex flex-row-reverse flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
+                    <img class="svg-player-score" src="img/user-yellow-icon.svg" alt="imagen del jugador rojo">
+                    <span
+                        class="d-flex flex-column flex-md-row-reverse flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
+                        <p class="p-player-name-2 mb-0">Jugador2</p>
+                        <p class="p-user-score fs-3 mb-1">10</p>
+                    </span>
+                </div>
             </div>
 
-            <!-- columna izquierda -->
-            <div class="element-player-1 d-flex flex-row flex-lg-column align-items-center justify-content-around p-1 border border-3 border-dark">
-                <img class="svg-player-score" src="img/user-red-icon.svg" alt="imagen del jugador rojo">
-
-                <span class="d-flex flex-column flex-md-row flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
-                    <p class="p-player-name-1 mb-0">Jugador1</p>
-                    <p class="p-user-score fs-3 mb-1">0</p>
-                </span>
-            </div>
-
-            <!-- Columna derecha -->
-            <div class="element-player-2 d-flex flex-row-reverse flex-lg-column align-items-center justify-content-around p-1 border border-3 border-dark">
-                <img class="svg-player-score" src="img/user-yellow-icon.svg"
-                    alt="imagen del jugador rojo">
-
-                <span class="d-flex flex-column flex-md-row-reverse flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
-                    <p class="p-player-name-2 mb-0">Jugador2</p>
-                    <p class="p-user-score fs-3 mb-1">10</p>
-                </span>
+            <!-- Submenu e informacion del juego -->
+            <div class="aside-game-info position-relative">
+                <div
+                    class="section-turn-player d-flex flex-column justify-content-center align-items-center position-relative">
+                    <p class="mb-0">Turno de: </p>
+                    <p class="player-turn-txt"> default </p>
+                </div>
+                <button type="button" class="btn-reset-game btn btn-primary position-absolute end-0 top-50"
+                    data-bs-toggle="modal" data-bs-target="#resetGameModal">Reiniciar Partida <i
+                        class="fa-solid fa-rotate-right"></i></button>
             </div>
         </div>
-    
+
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Launch static backdrop modal
+        </button>
+
+        <!-- Modal nombres usuarios-->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Introducir apodos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!-- Seccion de usuarios: -->
+                    <div class="modal-body d-flex align-items-center justify-content-around gap-4">
+                        
+                        <!-- Usuario 1 -->
+                        <div class="d-flex align-items-center gap-2">
+                            <!-- Selector de avatar -->
+                            <span class="d-flex flex-column justify-content-center align-items-center gap-1">
+                                <img class="svg-player" src="img/user-red-icon.svg" alt="Icono del jugador rojo">
+                                <button type="button" class="btn btn-primary" id="selectAvatarBtn" data-bs-toggle="collapse" data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
+                                    Editar
+                                </button>
+                            </span>
+                            <span class="d-flex flex-column align-items-center justify-content-end">
+                                <h3>Jugador 1</h3>
+                                <input class="form-control" type="text" placeholder="Jugador 1"
+                                    aria-label="default input example">
+                            </span>
+                        </div>
+                        <div class="d-flex flex-row-reverse align-items-center gap-2">
+                            <img class="svg-player" src="img/user-yellow-icon.svg" alt="Icono del jugador Amarillo">
+                            <span class="d-flex flex-column align-items-center justify-content-center">
+                                <h3>Jugador 2</h3>
+                                <input class="form-control" type="text" placeholder="Jugador 2"
+                                    aria-label="default input example">
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="collapse" id="avatarOptions">
+                        <div class=" container-avatar-elements">
+                            <!-- Aquí colocarás las imágenes de los avatares para que los usuarios puedan seleccionar -->
+                            <img class="avatar" src="img/avatar/bear-user-avatar.png" alt="Avatar 1" data-avatar="img/avatar/bear-user-avatar.png">
+                            <img class="avatar" src="img/avatar/chicken-user-avatar.png" alt="Avatar 2" data-avatar="img/avatar/chicken-user-avatar.png">
+                            <img class="avatar" src="img/avatar/dog-user-avatar.png" alt="Avatar 3" data-avatar="img/avatar/dog-user-avatar.png">
+                            <img class="avatar" src="img/avatar/giraffe-user-avatar.png" alt="Avatar 4" data-avatar="img/avatar/giraffe-user-avatar.png">
+                            <img class="avatar" src="img/avatar/panda-user-avatar.png" alt="Avatar 5" data-avatar="img/avatar/panda-user-avatar.png">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
         <!-- Modal Victoria de jugador-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -138,8 +203,6 @@
 
 
         <!-- Modal reiniciar partida -->
-
-        <!-- Modal -->
         <div class="modal fade" id="resetGameModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -160,8 +223,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
 </body>

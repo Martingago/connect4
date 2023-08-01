@@ -20,12 +20,22 @@
     order: 3;
 }
 
+/* Titulo */
+
+.title-game-connect4{
+    font-family: LilitiaOne;
+    font-size: 4rem;
+}
 /* Turno del jugador: */
 
 .section-connect4-game {
     width: fit-content;
-    margin: auto;
+    margin: 0 auto;
 }
+    .section-connect4-game .logo-number{
+        color: yellow;
+        text-shadow: 2px 2px 2px black;
+    }
 
 .section-turn-player {
     background: rgb(247, 255, 115);
@@ -75,6 +85,26 @@
     background-color: rgb(253, 253, 240);
     box-shadow: 0px 4px 2px black;
 }
+
+.svg-player{
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+/* Avatares de usuario */
+
+.container-avatar-elements{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(5, auto);
+}
+
+.avatar{
+    width: 50px;
+    border-radius: 50%;
+}
+
 
 @media screen and (min-width: 992px) {
 
