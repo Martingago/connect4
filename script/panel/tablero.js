@@ -51,14 +51,13 @@ const crearTablero = () => {
             celda.dataset.row = row;
             // celda.textContent = `r:${row} c:${col}`
             tablero.appendChild(celda);
-            gameBoard[row][col] = null;
-            
-            
+            gameBoard[row][col] = null; 
         }
     }
     tablero.style.gridTemplateColumns = `repeat(${cols}, auto)`;
     let currentPlayerData = getCurrentPlayerTest(); //objeto del jugador inicial
     playerTurnTxt.textContent = currentPlayerData._nombre;
+    return true;
 }
 
 

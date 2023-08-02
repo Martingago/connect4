@@ -4,20 +4,45 @@ import { player1, player2, setPlayerAvatar } from "./players.js";
 export { crearListaAvatares };
 
 const avatarImagesAnimals = [
-    "img/avatar/bear-user-avatar.png",
-    'img/avatar/chicken-user-avatar.png',
-    'img/avatar/dog-user-avatar.png',
-    'img/avatar/giraffe-user-avatar.png',
-    'img/avatar/meerkat-user-avatar.png',
-    'img/avatar/panda-user-avatar.png',
-    'img/avatar/puffer-fish-user-avatar.png',
-    'img/avatar/rabbit-user-avatar.png',
-    'img/avatar/wolf-user-avatar.png'
+    'Animales',
+    'img/avatar/animals/bear-user-avatar.png',
+    'img/avatar/animals/cat-user-avatar.png',
+    'img/avatar/animals/chicken-user-avatar.png',
+    'img/avatar/animals/dog-user-avatar.png',
+    'img/avatar/animals/giraffe-user-avatar.png',
+    'img/avatar/animals/gorilla-user-avatar.png',
+    'img/avatar/animals/horse-user-avatar.png',
+    'img/avatar/animals/koala-user-avatar.png',
+    'img/avatar/animals/meerkat-user-avatar.png',
+    'img/avatar/animals/panda-user-avatar.png',
+    'img/avatar/animals/penguin-user-avatar.png',
+    'img/avatar/animals/puffer-fish-user-avatar.png',
+    'img/avatar/animals/rabbit-user-avatar.png',
+    'img/avatar/animals/wolf-user-avatar.png',
+    'img/avatar/animals/wild-boar-user-avatar.png'
 ]
 
 const avatarImagesHumans = [
-    'img/avatar/astronaut.png'
+    'Humanos',
+    'img/avatar/humans/user-red-avatar.png',
+    'img/avatar/humans/user-yellow-avatar.png',
+    'img/avatar/humans/man-user-avatar.png',
+    'img/avatar/humans/woman-user-avatar.png',
+    'img/avatar/humans/astronaut-user-avatar.png',
+    'img/avatar/humans/boy-user-avatar.png',
+    'img/avatar/humans/girl-user-avatar.png',
+    'img/avatar/humans/clown-user-avatar.png',
+    'img/avatar/humans/fish-user-avatar.png',
+    'img/avatar/humans/invisible-man-user-avatar.png',
+    'img/avatar/humans/knight-user-avatar.png',
+    'img/avatar/humans/robot-user-avatar.png',
+    'img/avatar/humans/serial-killer-user-avatar.png',
+    'img/avatar/humans/soldier-user-avatar.png',
+    'img/avatar/humans/queen-user-avatar.png',
 ]
+
+const arrayDeAvatares = [avatarImagesAnimals, avatarImagesHumans];
+
 
 //Botones de gestion de avatares del usuario
 const btnSelectAvatarP1 = document.querySelector('#selectAvatarBtn');
@@ -68,13 +93,26 @@ btnConfirmAvatar.addEventListener("click", () => {
  * Funcion que crea todos los avatares en el tablero para que el usuario pueda interactuar
  */
 const crearListaAvatares = () => {
-    const containerAvatares = document.querySelector(".container-avatar-elements");
-    for (let i = 0; i < avatarImagesAnimals.length; i++) {
-        const avatar = document.createElement('img'); //Creamos elemento img
-        avatar.classList.add('avatar'); //añadido el classlist
-        avatar.src = avatarImagesAnimals[i]; //Añadimos src del imagen
-        avatar.alt = "Texto alternativo";
-        avatar.dataset.avatar = avatarImagesAnimals[i]; //dataset avatar
-        containerAvatares.appendChild(avatar);
-    }
-}
+    const sectionAvatares = document.querySelector("#avatarOptions");
+    
+    arrayDeAvatares.forEach(avatarArray => {
+        const avatarTitle = document.createElement('h5');
+        avatarTitle.classList.add('avatar-title');
+        avatarTitle.textContent = avatarArray[0];
+        sectionAvatares.appendChild(avatarTitle);
+
+        const containerAvatares = document.createElement('div');
+        containerAvatares.classList.add('container-avatar-elements');
+        
+        for (let i = 1; i < avatarArray.length; i++) {
+            const avatar = document.createElement('img'); //Creamos elemento img
+            avatar.classList.add('avatar'); //añadido el classlist
+            avatar.src = avatarArray[i]; //Añadimos src del imagen
+            avatar.alt = "Texto alternativo";
+            avatar.dataset.avatar = avatarArray[i]; //dataset avatar
+            containerAvatares.appendChild(avatar);
+        }
+        
+        sectionAvatares.appendChild(containerAvatares);
+    });
+};
