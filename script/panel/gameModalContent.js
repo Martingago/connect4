@@ -29,7 +29,7 @@ const showModalGame = () => {
 //EMPATE DE LA PARTIDA
 const drawGame = () => {
     playerTxtWinner.textContent = "EMPATE";
-    imgSrcModal.src = 'img/draw-no-one-wins-players.png';
+    imgSrcModal.src = 'img/general/draw-no-one-wins-players.png';
     imgSrcModal.alt = "Imagen de una balanza que simboliza que ambos jugadores estan igualados"
     resultadoGame.textContent = "Nadie gana"
 }
@@ -38,7 +38,7 @@ const drawGame = () => {
 const winnerPlayer = () => {
     const currentPlayerData = getCurrentPlayerTest();
     playerTxtWinner.textContent = currentPlayerData._nombre;
-    imgSrcModal.src = 'img/trophy-victory-player.png';
+    imgSrcModal.src = 'img/general/trophy-victory-player.png';
     imgSrcModal.alt = "Imagen de un trofeo que simboliza que uno de los jugadores ha ganado la partida";
     resultadoGame.textContent = "Gana la partida";
 }

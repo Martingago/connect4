@@ -1,47 +1,9 @@
 "use strict";
 
 import { player1, player2, setPlayerAvatar } from "./players.js";
+import { arrayDeAvatares } from "./avatar/avatarImages.js";
 export { crearListaAvatares };
 
-const avatarImagesAnimals = [
-    'Animales',
-    'img/avatar/animals/bear-user-avatar.png',
-    'img/avatar/animals/cat-user-avatar.png',
-    'img/avatar/animals/chicken-user-avatar.png',
-    'img/avatar/animals/dog-user-avatar.png',
-    'img/avatar/animals/giraffe-user-avatar.png',
-    'img/avatar/animals/gorilla-user-avatar.png',
-    'img/avatar/animals/horse-user-avatar.png',
-    'img/avatar/animals/koala-user-avatar.png',
-    'img/avatar/animals/meerkat-user-avatar.png',
-    'img/avatar/animals/panda-user-avatar.png',
-    'img/avatar/animals/penguin-user-avatar.png',
-    'img/avatar/animals/puffer-fish-user-avatar.png',
-    'img/avatar/animals/rabbit-user-avatar.png',
-    'img/avatar/animals/wolf-user-avatar.png',
-    'img/avatar/animals/wild-boar-user-avatar.png'
-]
-
-const avatarImagesHumans = [
-    'Humanos',
-    'img/avatar/humans/user-red-avatar.png',
-    'img/avatar/humans/user-yellow-avatar.png',
-    'img/avatar/humans/man-user-avatar.png',
-    'img/avatar/humans/woman-user-avatar.png',
-    'img/avatar/humans/astronaut-user-avatar.png',
-    'img/avatar/humans/boy-user-avatar.png',
-    'img/avatar/humans/girl-user-avatar.png',
-    'img/avatar/humans/clown-user-avatar.png',
-    'img/avatar/humans/fish-user-avatar.png',
-    'img/avatar/humans/invisible-man-user-avatar.png',
-    'img/avatar/humans/knight-user-avatar.png',
-    'img/avatar/humans/robot-user-avatar.png',
-    'img/avatar/humans/serial-killer-user-avatar.png',
-    'img/avatar/humans/soldier-user-avatar.png',
-    'img/avatar/humans/queen-user-avatar.png',
-]
-
-const arrayDeAvatares = [avatarImagesAnimals, avatarImagesHumans];
 
 
 //Botones de gestion de avatares del usuario
@@ -59,18 +21,29 @@ const handleAvatarSelection = (player, avatarElement) => {
 const selectAvatarP1 = (event) => handleAvatarSelection(player1, event.target);
 const selectAvatarP2 = (event) => handleAvatarSelection(player2, event.target);
 
-// Agregar eventos de clic a los botones "Editar" para seleccionar avatares
+// Agregar eventos de click a los botones "Editar" para seleccionar avatares
 btnSelectAvatarP1.addEventListener("click", () => {
-    console.log("editando P1");
+    editandoP1 = !editandoP1;
+    editButtonP1();
+    if (editandoP2) {
+        editandoP2 = false;
+        editButtonP2();
+    }
+
     const avatares = document.querySelectorAll(".avatar");
     avatares.forEach(avatar => {
         avatar.removeEventListener("click", selectAvatarP2); // Eliminar listener de P2
-        avatar.addEventListener("click", selectAvatarP1);    // Agregar listener de P1
+        avatar.addEventListener("click", selectAvatarP1);
     });
 });
 
 btnSelectAvatarP2.addEventListener("click", () => {
-    console.log("editando P2");
+    editandoP2 = !editandoP2;
+    editButtonP2();
+    if (editandoP1) {
+        editandoP1 = false;
+        editButtonP1();
+    }
     const avatares = document.querySelectorAll(".avatar");
     avatares.forEach(avatar => {
         avatar.removeEventListener("click", selectAvatarP1); // Eliminar listener de P1
@@ -78,9 +51,35 @@ btnSelectAvatarP2.addEventListener("click", () => {
     });
 });
 
+let editandoP1 = false;
+let editandoP2 = false;
 
+const editButtonP1 = () => {
+    if (editandoP1) {
+        btnSelectAvatarP1.textContent = "Editando";
+    } else {
+
+        btnSelectAvatarP1.textContent = "Editar";
+    }
+}
+
+const editButtonP2 = () => {
+    if (editandoP2) {
+        btnSelectAvatarP2.textContent = "Editando";
+    } else {
+        btnSelectAvatarP2.textContent = "Editar"
+    }
+}
+
+/**
+ * ESTA FUNCION TENGO QUE MOVERLA PARA EMPLEAR EL MISMO BOTON CON OTRAS FUNCIONES!
+ */
 btnConfirmAvatar.addEventListener("click", () => {
     const avatares = document.querySelectorAll(".avatar");
+    editandoP1 = false;
+    editandoP2 = false;
+    editButtonP1();
+    editButtonP2();
     avatares.forEach(avatar => {
         avatar.removeEventListener("click", selectAvatarP1);
         avatar.removeEventListener("click", selectAvatarP2);
@@ -94,25 +93,24 @@ btnConfirmAvatar.addEventListener("click", () => {
  */
 const crearListaAvatares = () => {
     const sectionAvatares = document.querySelector("#avatarOptions");
-    
+
     arrayDeAvatares.forEach(avatarArray => {
         const avatarTitle = document.createElement('h5');
         avatarTitle.classList.add('avatar-title');
-        avatarTitle.textContent = avatarArray[0];
+        avatarTitle.textContent = avatarArray[0]; //Titulo de la seccion
         sectionAvatares.appendChild(avatarTitle);
 
         const containerAvatares = document.createElement('div');
         containerAvatares.classList.add('container-avatar-elements');
-        
+
         for (let i = 1; i < avatarArray.length; i++) {
             const avatar = document.createElement('img'); //Creamos elemento img
             avatar.classList.add('avatar'); //añadido el classlist
-            avatar.src = avatarArray[i]; //Añadimos src del imagen
-            avatar.alt = "Texto alternativo";
-            avatar.dataset.avatar = avatarArray[i]; //dataset avatar
+            avatar.src = avatarArray[i].url; //Añadimos src del imagen
+            avatar.alt = avatarArray[i].alt; //añadido texto alternativo
+            avatar.dataset.avatar = avatarArray[i].url; //Dataset del avatar con la URL de la imagen
             containerAvatares.appendChild(avatar);
         }
-        
         sectionAvatares.appendChild(containerAvatares);
     });
 };
