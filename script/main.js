@@ -2,9 +2,9 @@
 
 import { crearTablero, dropToken, checkTableroEmpty, getCurrentCol, getCurrentRow } from "./panel/tablero.js";
 import { checkWin, getVictoria, resetGame, showWinnerLine } from "./controls/game.js";
-import { getCurrentPlayerTest, switchCurrentPlayerTest, nextTurnPlayerTxt } from "./players/players.js";
+import { switchCurrentPlayerTest, nextTurnPlayerTxt } from "./players/players.js";
 import { handleCellHover, handleCellOutHover, showNextPreview } from "./panel/tokenPreview.js";
-import { crearListaAvatares } from "./players/avatarImages.js";
+import { crearListaAvatares } from "./players/avatar/userAvatar.js";
 import { drawGame, showModalGame, winnerPlayer } from "./panel/gameModalContent.js";
 
 const tablero = document.querySelector(".tablero");

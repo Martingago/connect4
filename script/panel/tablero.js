@@ -1,5 +1,5 @@
 "use strict";
-import { getCurrentPlayerTest } from "../players/players.js";
+import { getCurrentPlayer } from "../players/players.js";
 
 export { crearTablero, dropToken, checkTableroEmpty, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol }
 
@@ -55,7 +55,7 @@ const crearTablero = () => {
         }
     }
     tablero.style.gridTemplateColumns = `repeat(${cols}, auto)`;
-    let currentPlayerData = getCurrentPlayerTest(); //objeto del jugador inicial
+    let currentPlayerData = getCurrentPlayer(); //objeto del jugador inicial
     playerTurnTxt.textContent = currentPlayerData._nombre;
     return true;
 }
@@ -76,7 +76,7 @@ const checkTableroEmpty = () => {
  * @returns boolean, true si se ha podido colocar la ficha (existe espacio en la columna), false en caso de que no se colocó la ficha (la columna está llena)
  */
 const dropToken = (columna) => {
-    let currentPlayerValue = getCurrentPlayerTest();
+    let currentPlayerValue = getCurrentPlayer();
     if (columna != undefined)
         for (let row = rows - 1; row >= 0; row--) {
             if (!gameBoard[row][columna]) { //Si la posicion está vacia devuelve true

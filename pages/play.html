@@ -7,10 +7,10 @@
     <title>Connect 4</title>
 
     <!-- <link rel="stylesheet" href="style/design/reset.css"> -->
-    <link rel="stylesheet" href="style/design/tablero.css">
-    <link rel="stylesheet" href="style/design/main.css">
-    <link rel="stylesheet" href="style/design/tableroContainer.css">
-    <link rel="stylesheet" href="style/design/userElements/userElements.css">
+    <link rel="stylesheet" href="/style/design/tablero.css">
+    <link rel="stylesheet" href="/style/design/main.css">
+    <link rel="stylesheet" href="/style/design/tableroContainer.css">
+    <link rel="stylesheet" href="/style/design/userElements/userElements.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -31,10 +31,10 @@
                 <!-- Elementos -->
                 <ul class="navbar-nav d-flex flex-row gap-4 justify-content-center ms-4">
                     <li class="nav-item">
-                        <a class="fs-5 nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="fs-5 nav-link active" aria-current="page" href="/index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="fs-5 nav-link" href="/pages/play.html">Jugar!</a>
+                        <a class="fs-5 nav-link" href="#">Jugar!</a>
                     </li>
                     <li class="nav-item">
                         <a class="fs-5 nav-link" href="#">Pricing</a>
@@ -87,7 +87,7 @@
                 <!-- columna izquierda -->
                 <div
                     class="element-player-1 d-flex flex-row flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
-                    <img class="svg-player-score avatar-player-1" src="img/avatar/humans/user-red-avatar.png"
+                    <img class="svg-player-score avatar-player-1" src="/img/avatar/humans/user-red-avatar.png"
                         alt="imagen del jugador rojo">
                     <span
                         class="d-flex flex-column flex-md-row flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
@@ -98,7 +98,7 @@
                 <!-- Columna derecha -->
                 <div
                     class="element-player-2 d-flex flex-row-reverse flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
-                    <img class="svg-player-score avatar-player-2" src="img/avatar/humans/user-yellow-avatar.png"
+                    <img class="svg-player-score avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.png"
                         alt="imagen del jugador rojo">
                     <span
                         class="d-flex flex-column flex-md-row-reverse flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
@@ -144,7 +144,7 @@
                         <div class="d-flex align-items-center gap-2">
                             <!-- Selector de avatar -->
                             <div class="d-flex flex-column justify-content-center align-items-center gap-1">
-                                <img class="svg-player avatar-player-1" src="img/avatar/humans/user-red-avatar.png"
+                                <img class="svg-player avatar-player-1" src="/img/avatar/humans/user-red-avatar.png"
                                     alt="Icono del jugador rojo">
                                 <button type="button" class="btn btn-primary" id="selectAvatarBtn"
                                     data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
@@ -161,7 +161,7 @@
                         <div class="d-flex flex-sm-row-reverse align-items-center gap-2">
                             <!-- selector de avatar -->
                             <div class="d-flex flex-column justify-content-center align-items-center gap-1">
-                                <img class="svg-player avatar-player-2" src="img/avatar/humans/user-yellow-avatar.png"
+                                <img class="svg-player avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.png"
                                     alt="Icono del jugador Amarillo">
                                 <button type="button" class="btn btn-primary" id="selectAvatarBtn2"
                                     data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
@@ -200,7 +200,7 @@
                     <div class="modal-body m-auto d-flex flex-column justify-content-center align-items-center">
                         <p class="fs-4 text-center m-auto">Woooooohoo</p>
                         <h3 class="player-winner-name modal-title fs-1 text-center" id="exampleModalLabel">Default</h3>
-                        <img class="modal-win-img" src="img/general/img-placeholder-web.png"
+                        <img class="modal-win-img" src="/img/general/img-placeholder-web.png"
                             alt="Imagen sin especificar, placeholder web">
                         <p class="resultado-players fs-3 text-center m-auto">Default txt</p>
                     </div>
@@ -238,7 +238,7 @@
     </div>
 
 
-    <script type="module" src="script/main.js"></script>
+    <script type="module" src="/script/main.js"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -1,7 +1,7 @@
 "use strict";
 
 export { drawGame, winnerPlayer, showModalGame }
-import { getCurrentPlayerTest } from "../players/players.js";
+import { getCurrentPlayer } from "../players/players.js";
 import { resetGame } from "../controls/game.js";
 
 const playerTxtWinner = document.querySelector(".player-winner-name");
@@ -29,16 +29,16 @@ const showModalGame = () => {
 //EMPATE DE LA PARTIDA
 const drawGame = () => {
     playerTxtWinner.textContent = "EMPATE";
-    imgSrcModal.src = 'img/general/draw-no-one-wins-players.png';
+    imgSrcModal.src = '/img/general/draw-no-one-wins-players.png';
     imgSrcModal.alt = "Imagen de una balanza que simboliza que ambos jugadores estan igualados"
     resultadoGame.textContent = "Nadie gana"
 }
 
 //GANA UN JUGADOR
 const winnerPlayer = () => {
-    const currentPlayerData = getCurrentPlayerTest();
+    const currentPlayerData = getCurrentPlayer();
     playerTxtWinner.textContent = currentPlayerData._nombre;
-    imgSrcModal.src = 'img/general/trophy-victory-player.png';
+    imgSrcModal.src = '/img/general/trophy-victory-player.png';
     imgSrcModal.alt = "Imagen de un trofeo que simboliza que uno de los jugadores ha ganado la partida";
     resultadoGame.textContent = "Gana la partida";
 }

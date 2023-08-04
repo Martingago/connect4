@@ -1,7 +1,7 @@
 "use strict";
 
 import { getCols, getRows, getGameBoard, setGameBoard } from "../panel/tablero.js";
-import { player1, player2, getCurrentPlayerTest, setCurrentPlayer } from "../players/players.js";
+import { player1, player2, getCurrentPlayer, setCurrentPlayer } from "../players/players.js";
 
 export { resetGame, checkWin, showWinnerLine, getVictoria };
 
@@ -29,7 +29,7 @@ const checkWin = (row, col) => {
             let r = row + sign * dx;
             let c = col + sign * dy;
 
-            while (r >= 0 && r < rows && c >= 0 && c < cols && gameBoard[r][c] === getCurrentPlayerTest()._color) {
+            while (r >= 0 && r < rows && c >= 0 && c < cols && gameBoard[r][c] === getCurrentPlayer()._color) {
                 linePositions.push({ r, c })
                 count++;
                 r += sign * dx;
