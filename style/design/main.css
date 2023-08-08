@@ -16,11 +16,23 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(2px);
 }
 
 .modal-win-img {
     max-width: 250px;
     margin: auto;
+}
+
+/* Titulo */
+.title-game-connect4 {
+    font-family: LilitiaOne;
+    font-size: 4rem;
+}
+
+.logo-number {
+    color: yellow;
+    text-shadow: 2px 2px 2px black;
 }
 
 .player-turn-txt {

@@ -20,12 +20,8 @@
     order: 3;
 }
 
-/* Titulo */
 
-.title-game-connect4{
-    font-family: LilitiaOne;
-    font-size: 4rem;
-}
+
 /* Turno del jugador: */
 .loading{
     width: 100%;
@@ -44,10 +40,7 @@
     align-items: center;
     display: none;
 }
-    .section-connect4-game .logo-number{
-        color: yellow;
-        text-shadow: 2px 2px 2px black;
-    }
+   
 
 .section-turn-player {
     background: rgb(247, 255, 115);
