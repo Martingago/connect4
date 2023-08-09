@@ -16,6 +16,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+.backdrop-filter-blur{
     backdrop-filter: blur(2px);
 }
 
