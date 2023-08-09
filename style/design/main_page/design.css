@@ -1,3 +1,16 @@
+.main-section-page{
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    min-height: calc(100vh - 70px);
+    padding-bottom: 5rem;
+}
+
+.main-section-page .buttons-section .btn{
+    width: 250px;
+    text-transform: uppercase;
+}
+
+
 .page-container .title-game-connect4{
     font-size: 6rem;
 }
