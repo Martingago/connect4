@@ -1,6 +1,6 @@
 "use strict";
+import { jugador1, jugador2 } from "../initUsers.js";
 import { updatePlayerPreviewAvatar } from "../hooks/updateChanges.js";
-import { jugador1, jugador2 } from "./players.js";
 export { seleccionarAvatarP1, seleccionarAvatarP2, stopAvatarUserSelection }
 
 //Botones de gestion de avatares del usuario

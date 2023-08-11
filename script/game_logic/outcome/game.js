@@ -1,8 +1,8 @@
 "use strict";
 
-import { getCols, getRows, getGameBoard, setGameBoard } from "../panel/tablero.js";
-import { getCurrentPlayer} from "../users/players/players.js";
-export { resetGame, checkWin, showWinnerLine, getVictoria };
+import { getCols, getRows, getGameBoard,} from "../board/board.js";
+import { getCurrentPlayer } from "../../users/players/players.js";
+export { checkWin, showWinnerLine, getVictoria, setVictoria };
 
 const cols = getCols();
 const rows = getRows();
@@ -11,6 +11,10 @@ let victoria = false;
 
 const getVictoria = () => {
     return victoria;
+}
+
+const setVictoria = (value) => {
+    victoria = value;
 }
 
 // Función para verificar si alguien ha ganado
@@ -24,6 +28,7 @@ const checkWin = (row, col) => {
     for (const [dx, dy] of directions) {
         let count = 1;
         const linePositions = [{ r: row, c: col }];
+        
         for (const sign of [-1, 1]) {
             let r = row + sign * dx;
             let c = col + sign * dy;
@@ -35,7 +40,7 @@ const checkWin = (row, col) => {
                 c += sign * dy;
             }
             if (count >= 4) {
-                victoria = true;
+                setVictoria(true);
                 return linePositions;
             }
         }
@@ -57,16 +62,7 @@ const showWinnerLine = (arrayLine) => {
     });
 }
 
-// Función para reiniciar el juego
-const resetGame = () => {
-    victoria = false;
-    const cells = document.querySelectorAll('.celda');
-    cells.forEach(cell => {
-        cell.classList.remove('red', 'yellow');
-    });
-    gameBoard = gameBoard.map(row => row.map(() => null));
-    setGameBoard(gameBoard);
-}
+
 
 
 

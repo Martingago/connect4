@@ -1,5 +1,6 @@
 "use strict";
-import { getCurrentPlayer, jugador1, jugador2 } from "../players/players.js";
+import { jugador1, jugador2 } from "../initUsers.js";
+import { getCurrentPlayer} from "../players/players.js";
 export { updatePlayerPreviewAvatar, updateDataPlayersStore, nextTurnPlayerTxt, updateGlobalUserData} 
 
 /**
@@ -14,6 +15,8 @@ const updatePlayerPreviewAvatar = (player) => {
     }
 }
 
+
+
 /**
  * Actualiza en el store local los datos de los jugadores
  * @param {*} player1 Datos que se actualizarán del jugador1
@@ -23,6 +26,7 @@ const updateDataPlayersStore = (player1, player2) => {
     localStorage.setItem("jugador1", JSON.stringify(player1));
     localStorage.setItem("jugador2", JSON.stringify(player2));
 }
+
 
 /**
  * Actualiza en todos los elementos de la APP el nuevo avatar del usuario
@@ -44,7 +48,6 @@ const updatePlayerAvatar = (player) => {
     } else {
         console.log("¿Quien ha tocado mi codigo?")
     }
-
 }
 
 /**
@@ -64,6 +67,9 @@ const actualizarNombreUsuarioApp = (player) => {
     }
 }
 
+/**
+ * Actualiza la informacion en pantalla de los usuarios (nombres, avatares, etc) con los datos actuales del usuario
+ */
 const updateGlobalUserData = () => {
     updatePlayerAvatar(jugador1);
     updatePlayerAvatar(jugador2);

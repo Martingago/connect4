@@ -1,18 +1,11 @@
 "use strict";
 
-export { drawGame, winnerPlayer, showModalGame }
-import { getCurrentPlayer } from "../users/players/players.js";
-import { resetGame } from "../controls/game.js";
+export { drawGame, winnerPlayer, showModalGame, hideModalGame }
+import { getCurrentPlayer } from "../../users/players/players.js";
 
 const playerTxtWinner = document.querySelector(".player-winner-name");
 const imgSrcModal = document.querySelector(".modal-win-img");
 const resultadoGame = document.querySelector(".resultado-players");
-const btnRestartModal = document.querySelector(".btn-restart-modal");
-
-btnRestartModal.addEventListener("click", () => {
-    resetGame();
-    hideModalGame();
-});
 
 var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
 

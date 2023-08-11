@@ -1,7 +1,8 @@
 "use strict";
-import { getCurrentPlayer } from "../users/players/players.js";
+import { getCurrentPlayer } from "../../users/players/players.js";
 
-export { crearTablero, dropToken, checkTableroEmpty, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol }
+
+export { createBoard, dropToken, checkTableroEmpty, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol }
 
 //Elementos del tablero:
 let rows = 6;
@@ -34,13 +35,11 @@ const setGameBoard = (newGameBoard) => {
 
 }
 
-const playerTurnTxt = document.querySelector(".player-turn-txt");
-
 /**
  * Funcion que crea el tablero virtual: Array de 2 dimensiones y lo traslada al apartado visual para que el usuario pueda visualizarlo =>
  * Se genera tambien un div con un class llamado "celda", cada uno de ellos tiene un dataset con el valor de su fila y columna correspondiente
  */
-const crearTablero = () => {
+const createBoard = () => {
     const tablero = document.querySelector(".tablero");
     for (let row = 0; row < rows; row++) {
         gameBoard[row] = [];
@@ -55,10 +54,11 @@ const crearTablero = () => {
         }
     }
     tablero.style.gridTemplateColumns = `repeat(${cols}, auto)`;
-    let currentPlayerData = getCurrentPlayer(); //objeto del jugador inicial
-    playerTurnTxt.textContent = currentPlayerData._nombre; //Establece el nombre del turno de jugador
     return true;
 }
+
+
+
 
 
 /**

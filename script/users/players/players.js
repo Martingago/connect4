@@ -1,6 +1,6 @@
 "use strict";
-export { jugador1, jugador2, getCurrentPlayer, setCurrentPlayer, switchCurrentPlayer, initPlayers}
-
+import { jugador1, jugador2 } from "../initUsers.js";
+export {getCurrentPlayer, setCurrentPlayer, switchCurrentPlayer, initPlayers}
 
 /**
  * Constructor del objeto jugador
@@ -29,13 +29,9 @@ const initPlayers = () => {
     }
 }
 
-// Obtener los datos de los jugadores desde el almacenamiento local
-const jugador1 = JSON.parse(localStorage.getItem("jugador1"));
-const jugador2 = JSON.parse(localStorage.getItem("jugador2"));
-
 
 //Valor del jugador actual
-let currentPlayer = jugador1;
+let currentPlayer;
 
 const getCurrentPlayer = () => {
     return currentPlayer;

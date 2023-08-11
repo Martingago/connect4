@@ -1,9 +1,10 @@
 "Use strict";
 
-import { getRows, getGameBoard } from "./tablero.js";
-import { getCurrentPlayer } from "../users/players/players.js";
-import { getVictoria } from "../controls/game.js";
-export { showNextPreview, handleCellHover, handleCellOutHover }
+import { getRows, getGameBoard } from "./board.js";
+import { getCurrentPlayer } from "../../users/players/players.js";
+import { getVictoria } from "../outcome/game.js";
+
+export { showNextPreview, handleCellHover, handleCellOutHover}
 
 
 const rows = getRows();

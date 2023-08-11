@@ -1,13 +1,18 @@
 "use strict";
-import { initPlayers, jugador1, jugador2 } from "./players/players.js";
-import { crearListaAvatares} from "./avatar/userAvatar.js";
-import { seleccionarAvatarP1, seleccionarAvatarP2, stopAvatarUserSelection } from "./players/playersDataEdit.js";
-import { updateDataPlayersStore } from "./hooks/updateChanges.js";
-import { fillFormWithUserDetails } from "./hooks/avatarSelectorData.js";
 
+import { inicializarDatosUsuarios, jugador1, jugador2 } from "./users/initUsers.js";
+
+
+import { crearListaAvatares} from "./users/avatar/userAvatar.js";
+import { seleccionarAvatarP1, seleccionarAvatarP2, stopAvatarUserSelection } from "./users/players/playersDataEdit.js";
+import { updateDataPlayersStore } from "./users/hooks/updateChanges.js";
+import { fillFormWithUserDetails } from "./users/hooks/avatarSelectorData.js";
 
 //Genera la lista de avatares disponibles
-initPlayers();
+
+inicializarDatosUsuarios();
+//console.log(jugador1, jugador2)
+//crear lista de avatares
 crearListaAvatares();
 fillFormWithUserDetails();
 //Botones de gestion de avatares del usuario
