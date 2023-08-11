@@ -1,5 +1,5 @@
 "use strict";
-import { getCurrentPlayer } from "../players/players.js";
+import { getCurrentPlayer } from "../users/players/players.js";
 
 export { crearTablero, dropToken, checkTableroEmpty, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol }
 
@@ -56,7 +56,7 @@ const crearTablero = () => {
     }
     tablero.style.gridTemplateColumns = `repeat(${cols}, auto)`;
     let currentPlayerData = getCurrentPlayer(); //objeto del jugador inicial
-    playerTurnTxt.textContent = currentPlayerData._nombre;
+    playerTurnTxt.textContent = currentPlayerData._nombre; //Establece el nombre del turno de jugador
     return true;
 }
 

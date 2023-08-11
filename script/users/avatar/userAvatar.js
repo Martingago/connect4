@@ -1,24 +1,12 @@
 "use strict";
 
 import { arrayDeAvatares } from "./avatarImages.js";
-import { seleccionarAvatarP1, seleccionarAvatarP2 } from "../playersDataEdit.js";
 export { crearListaAvatares };
-
-
-//Botones de gestion de avatares del usuario
-const btnSelectAvatarP1 = document.querySelector('#selectAvatarBtn');
-const btnSelectAvatarP2 = document.querySelector("#selectAvatarBtn2");
-const btnConfirmAvatar = document.querySelector("#btnConfirmAvatar");
-
-
-btnSelectAvatarP1.addEventListener("click", seleccionarAvatarP1);
-btnSelectAvatarP2.addEventListener("click", seleccionarAvatarP2);
-
-
 
 /**
  * Funcion que crea todos los avatares en el tablero para que el usuario pueda interactuar
  */
+
 const crearListaAvatares = () => {
     const sectionAvatares = document.querySelector("#avatarOptions");
 

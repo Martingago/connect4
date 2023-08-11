@@ -1,6 +1,6 @@
 "use strict";
-
-import { player1, player2, updatePlayerAvatar } from "./players.js";
+import { updatePlayerPreviewAvatar } from "../hooks/updateChanges.js";
+import { jugador1, jugador2 } from "./players.js";
 export { seleccionarAvatarP1, seleccionarAvatarP2, stopAvatarUserSelection }
 
 //Botones de gestion de avatares del usuario
@@ -23,12 +23,13 @@ let editandoP2 = false;
  */
 const handleAvatarSelection = (player, avatarElement) => {
     player._avatar = avatarElement.dataset.avatar;
-    updatePlayerAvatar(player);
+    updatePlayerPreviewAvatar(player);
 };
 
+
 // Definir funciones nombradas para los eventos de selección de avatar
-const selectAvatarP1 = (event) => handleAvatarSelection(player1, event.target);
-const selectAvatarP2 = (event) => handleAvatarSelection(player2, event.target);
+const selectAvatarP1 = (event) => handleAvatarSelection(jugador1, event.target);
+const selectAvatarP2 = (event) => handleAvatarSelection(jugador2, event.target);
 
 
 /**
@@ -36,6 +37,7 @@ const selectAvatarP2 = (event) => handleAvatarSelection(player2, event.target);
  * Desactiva la seleccion del jugador2
  */
 const seleccionarAvatarP1 = () => {
+    console.log("editando")
     editandoP1 = !editandoP1;
     editButtonTxt(btnSelectAvatarP1, editandoP1);
     if (editandoP2) {
@@ -52,8 +54,6 @@ const seleccionarAvatarP1 = () => {
         }
     });
 }
-
-
 
 /**
  * Activa la seleccion de avatar del jugador2

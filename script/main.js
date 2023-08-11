@@ -1,18 +1,19 @@
 "use strict";
-
 import { crearTablero, dropToken, checkTableroEmpty, getCurrentCol, getCurrentRow } from "./panel/tablero.js";
 import { checkWin, getVictoria, resetGame, showWinnerLine } from "./controls/game.js";
-import { switchCurrentPlayerTest, nextTurnPlayerTxt } from "./players/players.js";
+import { switchCurrentPlayer, initPlayers } from "./users/players/players.js";
 import { handleCellHover, handleCellOutHover, showNextPreview } from "./panel/tokenPreview.js";
-import { crearListaAvatares } from "./players/avatar/userAvatar.js";
 import { drawGame, showModalGame, winnerPlayer } from "./panel/gameModalContent.js";
+import { nextTurnPlayerTxt, updateGlobalUserData } from "./users/hooks/updateChanges.js";
+
 
 const tablero = document.querySelector(".tablero");
-//genera el tablero virtual y visual de la aplicacion
-//crearTablero(); 
-
 const sectionTablero = document.querySelector(".section-connect4-game");
 const loadingIcon = document.querySelector(".loading")
+
+initPlayers();
+
+
 
 let tableroReady = false;
 const generateTablero = async () => {
@@ -31,9 +32,9 @@ const generateTablero = async () => {
         loadingIcon.style.display = "none";
     }
 };
+
 generateTablero();
-
-
+updateGlobalUserData();
 
 const handleCellClick = (event) => {
     if (!getVictoria()) {
@@ -56,7 +57,7 @@ const handleCellClick = (event) => {
             }
             //Continua la partida
             else {
-                switchCurrentPlayerTest();
+                switchCurrentPlayer();
                 showNextPreview(currentCol, currentRow);
                 nextTurnPlayerTxt();
 
@@ -81,5 +82,3 @@ btnReiniciarPartida.addEventListener("click", () => {
     resetGame();
 })
 
-//Lista de avatares:
-crearListaAvatares();

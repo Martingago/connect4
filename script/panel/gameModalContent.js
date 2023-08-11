@@ -1,7 +1,7 @@
 "use strict";
 
 export { drawGame, winnerPlayer, showModalGame }
-import { getCurrentPlayer } from "../players/players.js";
+import { getCurrentPlayer } from "../users/players/players.js";
 import { resetGame } from "../controls/game.js";
 
 const playerTxtWinner = document.querySelector(".player-winner-name");

@@ -68,3 +68,41 @@ body {
 .p-user-score {
     font-weight: 600;
 }
+
+.svg-player{
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+/* Avatares de usuario */
+.avatar-title{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+
+.container-avatar-elements{
+    margin: auto;
+    width: 100%;
+    align-self: center;
+    gap: .25rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 60px));
+    grid-auto-rows: auto;
+    justify-items: center;
+    justify-content: center;
+}
+
+.avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid lightgray;
+    cursor: pointer;
+    margin: auto;
+}
+
+.avatar:hover{
+    border: 4px solid green;
+}

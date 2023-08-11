@@ -16,8 +16,12 @@
 </head>
 
 <body>
-    <div class="page-container backdrop-filter-blur">
+    <!-- Animacion del fondo -->
+    <div id="background-animation"></div>
 
+
+    <!-- Contenido principal -->
+    <div class="page-container backdrop-filter-blur">
         <!-- Navegador web -->
         <nav class="navbar bg-body-tertiary sticky-top">
             <div class="container-fluid justify-content-start">
@@ -72,12 +76,74 @@
             <h4 class="text-center fs-5">Desafía a tus amigos en el clásico juego de estrategia</h4>
             <div class="buttons-section  d-flex flex-column gap-2 justify-content-end align-items-center">
                 <a href="/pages/play.html" class="btn btn-primary btn-lg">Jugar</a>
-                <button type="button" class="btn btn-secondary btn-lg">Personalizar</button>
+                <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Personalizar</button>
             </div>
         </div>
 
     </div>
-    <div id="background-animation"></div>
+
+            <!-- Modal nombres usuarios-->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Introducir apodos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!-- Seccion de usuarios: -->
+                    <div
+                        class="modal-body d-flex flex-column flex-sm-row align-items-center justify-content-around gap-4">
+
+                        <!-- Usuario 1 -->
+                        <div class="d-flex align-items-center gap-2">
+                            <!-- Selector de avatar -->
+                            <div class="d-flex flex-column justify-content-center align-items-center gap-1">
+                                <img id="preview-avatar-p1" class="svg-player avatar-player-1" src="/img/avatar/humans/user-red-avatar.png"
+                                    alt="Icono del jugador rojo">
+                                <button type="button" class="btn btn-primary" id="selectAvatarBtn"
+                                    data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
+                                    Editar
+                                </button>
+                            </div>
+                            <div class="d-flex flex-column align-items-center justify-content-end">
+                                <h4 class="text-start w-100">Jugador 1</h4>
+                                <input class="form-control" id="form-player1-username" type="text"
+                                    placeholder="Jugador 1" aria-label="default input example">
+                            </div>
+                        </div>
+                        <!-- Usuario 2 -->
+                        <div class="d-flex flex-sm-row-reverse align-items-center gap-2">
+                            <!-- selector de avatar -->
+                            <div class="d-flex flex-column justify-content-center align-items-center gap-1">
+                                <img id="preview-avatar-p2" class="svg-player avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.png"
+                                    alt="Icono del jugador Amarillo">
+                                <button type="button" class="btn btn-primary" id="selectAvatarBtn2"
+                                    data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
+                                    Editar
+                                </button>
+                            </div>
+                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                <h4 class="text-start text-sm-end w-100">Jugador 2</h4>
+                                <input class="form-control" id="form-player2-username" type="text"
+                                    placeholder="Jugador 2" aria-label="default input example">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- SELECTOR DE AVATARES -->
+                    <div id="avatarOptions" class="mb-2">
+                        <!-- Las imagenes se cargan mediante JS -->
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="btnConfirmAvatar"
+                            data-bs-dismiss="modal">Guardar y continuar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -87,6 +153,7 @@
         crossorigin="anonymous"></script>
 
     <script src="script/background_animation/main.js" type="module"></script>
+    <script src="script/users/main.js" type="module"></script>
 </body>
 
 </html>

@@ -1,8 +1,7 @@
 "use strict";
 
 import { getCols, getRows, getGameBoard, setGameBoard } from "../panel/tablero.js";
-import { player1, player2, getCurrentPlayer, setCurrentPlayer } from "../players/players.js";
-
+import { getCurrentPlayer} from "../users/players/players.js";
 export { resetGame, checkWin, showWinnerLine, getVictoria };
 
 const cols = getCols();
@@ -34,19 +33,15 @@ const checkWin = (row, col) => {
                 count++;
                 r += sign * dx;
                 c += sign * dy;
-
             }
             if (count >= 4) {
                 victoria = true;
                 return linePositions;
             }
         }
-
-
     }
     return false;
 }
-
 
 const showWinnerLine = (arrayLine) => {
     arrayLine.forEach(element => {
@@ -71,7 +66,6 @@ const resetGame = () => {
     });
     gameBoard = gameBoard.map(row => row.map(() => null));
     setGameBoard(gameBoard);
-    setCurrentPlayer(player1);
 }
 
 

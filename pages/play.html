@@ -145,7 +145,7 @@
                         <div class="d-flex align-items-center gap-2">
                             <!-- Selector de avatar -->
                             <div class="d-flex flex-column justify-content-center align-items-center gap-1">
-                                <img class="svg-player avatar-player-1" src="/img/avatar/humans/user-red-avatar.png"
+                                <img id="preview-avatar-p1" class="svg-player avatar-player-1" src="/img/avatar/humans/user-red-avatar.png"
                                     alt="Icono del jugador rojo">
                                 <button type="button" class="btn btn-primary" id="selectAvatarBtn"
                                     data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
@@ -162,7 +162,7 @@
                         <div class="d-flex flex-sm-row-reverse align-items-center gap-2">
                             <!-- selector de avatar -->
                             <div class="d-flex flex-column justify-content-center align-items-center gap-1">
-                                <img class="svg-player avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.png"
+                                <img id="preview-avatar-p2" class="svg-player avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.png"
                                     alt="Icono del jugador Amarillo">
                                 <button type="button" class="btn btn-primary" id="selectAvatarBtn2"
                                     data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
@@ -238,9 +238,9 @@
         </div>
     </div>
 
-
+    <script type="module" src="/script/users/main.js"></script>
     <script type="module" src="/script/main.js"></script>
-
+    
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
