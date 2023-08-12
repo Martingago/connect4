@@ -10,8 +10,7 @@ import { nextTurnPlayerTxt } from "../../users/hooks/updateChanges.js";
 export { handleCellClick }
 
 const handleCellClick = (event) => {
-    
-    if (!getVictoria()) {
+    if (!getVictoria()) { 
         const selectedColumn = event.target.dataset.column; //valor de la columna en la que el usuario ha hecho click
         if (dropToken(selectedColumn)) {
             const currentCol = getCurrentCol(); //posicion de la columna en la que coloca la ficha
@@ -21,6 +20,7 @@ const handleCellClick = (event) => {
             console.log(winLine)
             //Un jugador gana la partida
             if (winLine) {
+                console.log("alguien gano!")
                 showWinnerLine(winLine);
                 winnerPlayer();
                 showModalGame();
@@ -30,6 +30,7 @@ const handleCellClick = (event) => {
             }
             //Continua la partida
             else {
+                console.log("continuando juego")
                 switchCurrentPlayer();
                 showNextPreview(currentCol, currentRow);
                 nextTurnPlayerTxt();

@@ -61,6 +61,7 @@ const handleCellClick = (event) => {
                 showNextPreview(currentCol, currentRow);
                 nextTurnPlayerTxt();
 
+                
             }
         }
     }
