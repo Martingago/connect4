@@ -19,6 +19,7 @@ const setVictoria = (value) => {
 
 // Función para verificar si alguien ha ganado
 const checkWin = (row, col) => {
+    gameBoard = getGameBoard();
     const directions = [
         [0, 1], // horizontal
         [1, 0], // vertical

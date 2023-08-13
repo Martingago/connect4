@@ -6,7 +6,8 @@
 }
 
 .main-section-page .buttons-section .btn{
-    width: 250px;
+    width: 280px;
+    font-size: 1.1rem;
     text-transform: uppercase;
 }
 

@@ -6,11 +6,12 @@ export {getCurrentPlayer, setCurrentPlayer, switchCurrentPlayer, initPlayers}
  * Constructor del objeto jugador
  */
 class Jugador {
-    constructor(nombre, color, imagen) {
+    constructor(id, nombre, color, imagen) {
+        this._id = id;
         this._nombre = nombre;
         this._color = color;
         this._avatar = imagen;
-        this._puntuacion = 0;
+        this._score = 0;
     }
 }
 
@@ -19,12 +20,12 @@ class Jugador {
  */
 const initPlayers = () => {
     if (!localStorage.getItem("jugador1")) {
-        const jugador1 = new Jugador("Jugador 1", "red", "/img/avatar/humans/user-red-avatar.png");
+        const jugador1 = new Jugador(1,"Jugador 1", "red", "/img/avatar/humans/user-red-avatar.png");
         localStorage.setItem("jugador1", JSON.stringify(jugador1));
     }
 
     if (!localStorage.getItem("jugador2")) {
-        const jugador2 = new Jugador("Jugador 2", "yellow", "/img/avatar/humans/user-yellow-avatar.png");
+        const jugador2 = new Jugador(2,"Jugador 2", "yellow", "/img/avatar/humans/user-yellow-avatar.png");
         localStorage.setItem("jugador2", JSON.stringify(jugador2));
     }
 }

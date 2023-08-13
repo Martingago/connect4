@@ -1,7 +1,8 @@
 "use strict";
+import { updatePlayerTxtScore } from "../../game_logic/view/updatePlayerData.js";
 import { jugador1, jugador2 } from "../initUsers.js";
 import { getCurrentPlayer} from "../players/players.js";
-export { updatePlayerPreviewAvatar, updateDataPlayersStore, nextTurnPlayerTxt, updateGlobalUserData} 
+export { updatePlayerPreviewAvatar, updateDataPlayersStore, nextTurnPlayerTxt, updateGlobalUserData, updatePlayerScore, resetPlayersScore} 
 
 /**
  * Actualiza la imagen del avatar en la previsualizacion de avatar (Personalizacion)
@@ -49,6 +50,26 @@ const updatePlayerAvatar = (player) => {
         console.log("¿Quien ha tocado mi codigo?")
     }
 }
+/**
+ * Actualiza la informacion de puntuacion de jugador en el score
+ * @param {*} playerID id del jugador, se utiliza para obtener la clave del store
+ */
+const updatePlayerScore = (playerID) => {
+    const jugador = JSON.parse(localStorage.getItem("jugador"+playerID));
+    jugador._score = ++jugador._score;
+    localStorage.setItem("jugador"+jugador._id, JSON.stringify(jugador));
+    updatePlayerTxtScore();
+}
+
+
+const resetPlayersScore = () => {
+    jugador1._score = 0;
+    jugador2._score = 0;
+    updateDataPlayersStore(jugador1, jugador2);
+    updatePlayerTxtScore();
+}
+
+
 
 /**
  * Actualiza el nombre del usuario en todos los elementos de la APP
@@ -76,6 +97,9 @@ const updateGlobalUserData = () => {
     actualizarNombreUsuarioApp(jugador1);
     actualizarNombreUsuarioApp(jugador2);
 }
+
+
+
 
 
 /**

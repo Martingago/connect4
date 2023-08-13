@@ -2,16 +2,15 @@
 
 import { inicializarDatosUsuarios, jugador1, jugador2 } from "./users/initUsers.js";
 
-
 import { crearListaAvatares} from "./users/avatar/userAvatar.js";
 import { seleccionarAvatarP1, seleccionarAvatarP2, stopAvatarUserSelection } from "./users/players/playersDataEdit.js";
 import { updateDataPlayersStore } from "./users/hooks/updateChanges.js";
 import { fillFormWithUserDetails } from "./users/hooks/avatarSelectorData.js";
+import { updatePlayersTableData } from "./game_logic/view/updatePlayerData.js";
+
 
 //Genera la lista de avatares disponibles
-
 inicializarDatosUsuarios();
-//console.log(jugador1, jugador2)
 //crear lista de avatares
 crearListaAvatares();
 fillFormWithUserDetails();
@@ -44,4 +43,10 @@ btnConfirmUserChanges.addEventListener("click", () => {
     updateDataPlayersStore(jugador1, jugador2);
     //Actuliza los botones de seleccion de avatar
     stopAvatarUserSelection();
+    //Actualiza los datos de las fichas de jugadores
+    if(document.querySelector(".element-player-1")){
+        updatePlayersTableData();
+    }
+    
+
 })

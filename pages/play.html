@@ -88,23 +88,23 @@
                 <!-- columna izquierda -->
                 <div
                     class="element-player-1 d-flex flex-row flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
-                    <img class="svg-player-score avatar-player-1" src="/img/avatar/humans/user-red-avatar.png"
+                    <img id="avatarP1" class="svg-player-score avatar-player-1" src="/img/avatar/humans/user-red-avatar.png"
                         alt="imagen del jugador rojo">
                     <span
                         class="d-flex flex-column flex-md-row flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
-                        <p class="p-player-name-1 mb-0">Jugador1</p>
-                        <p class="p-user-score fs-3 mb-1">0</p>
+                        <p id="usernameP1" class="p-player-name-1 mb-0">Jugador1</p>
+                        <p id="scoreBoardP1" class="p-user-score fs-3 mb-1">0</p>
                     </span>
                 </div>
                 <!-- Columna derecha -->
                 <div
                     class="element-player-2 d-flex flex-row-reverse flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
-                    <img class="svg-player-score avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.png"
+                    <img id="avatarP2" class="svg-player-score avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.png"
                         alt="imagen del jugador rojo">
                     <span
                         class="d-flex flex-column flex-md-row-reverse flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
-                        <p class="p-player-name-2 mb-0">Jugador2</p>
-                        <p class="p-user-score fs-3 mb-1">0</p>
+                        <p id="usernameP2" class="p-player-name-2 mb-0">Jugador2</p>
+                        <p id="scoreBoardP2" class="p-user-score fs-3 mb-1">0</p>
                     </span>
                 </div>
             </div>
@@ -126,6 +126,10 @@
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Launch static backdrop modal
+        </button>
+
+        <button id="reset-score" type="button" class="btn btn-primary">
+            Reiniciar Puntuación
         </button>
 
         <!-- Modal nombres usuarios-->
@@ -238,8 +242,7 @@
         </div>
     </div>
 
-    <!-- <script type="module" src="/script/users/main.js"></script> -->
-    <!-- <script type="module" src="/script/main.js"></script> -->
+    <script type="module" src="/script/scriptIndex.js"></script>
     <script type="module" src="/script/mainTest.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

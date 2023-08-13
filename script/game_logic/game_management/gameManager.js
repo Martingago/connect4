@@ -15,12 +15,9 @@ const handleCellClick = (event) => {
         if (dropToken(selectedColumn)) {
             const currentCol = getCurrentCol(); //posicion de la columna en la que coloca la ficha
             const currentRow = getCurrentRow(); //posicicion de la columna en la que se coloca la ficha
-
             const winLine = checkWin(currentRow, currentCol);
-            console.log(winLine)
             //Un jugador gana la partida
             if (winLine) {
-                console.log("alguien gano!")
                 showWinnerLine(winLine);
                 winnerPlayer();
                 showModalGame();
@@ -30,7 +27,6 @@ const handleCellClick = (event) => {
             }
             //Continua la partida
             else {
-                console.log("continuando juego")
                 switchCurrentPlayer();
                 showNextPreview(currentCol, currentRow);
                 nextTurnPlayerTxt();
