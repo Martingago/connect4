@@ -10,7 +10,7 @@ import { updatePlayersTableData } from "./game_logic/view/updatePlayerData.js";
 import { resetPlayersScore } from "./users/hooks/updateChanges.js";
 
 
-//inicializarDatosUsuarios();
+inicializarDatosUsuarios();
 setCurrentPlayer(jugador1);
 generateTablero();
 updatePlayersTableData();

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connect 4</title>
 
-    <!-- <link rel="stylesheet" href="style/design/reset.css"> -->
+    <link rel="shortcut icon" href="/img/icon/boy-user-avatar.png" type="image/x-icon">
     <link rel="stylesheet" href="/style/design/tablero.css">
     <link rel="stylesheet" href="/style/design/main.css">
     <link rel="stylesheet" href="/style/design/tableroContainer.css">
@@ -122,79 +122,9 @@
             </div>
         </div>
 
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Launch static backdrop modal
-        </button>
-
         <button id="reset-score" type="button" class="btn btn-primary">
             Reiniciar Puntuación
         </button>
-
-        <!-- Modal nombres usuarios-->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Introducir apodos</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <!-- Seccion de usuarios: -->
-                    <div
-                        class="modal-body d-flex flex-column flex-sm-row align-items-center justify-content-around gap-4">
-
-                        <!-- Usuario 1 -->
-                        <div class="d-flex align-items-center gap-2">
-                            <!-- Selector de avatar -->
-                            <div class="d-flex flex-column justify-content-center align-items-center gap-1">
-                                <img id="preview-avatar-p1" class="svg-player avatar-player-1" src="/img/avatar/humans/user-red-avatar.png"
-                                    alt="Icono del jugador rojo">
-                                <button type="button" class="btn btn-primary" id="selectAvatarBtn"
-                                    data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
-                                    Editar
-                                </button>
-                            </div>
-                            <div class="d-flex flex-column align-items-center justify-content-end">
-                                <h4 class="text-start w-100">Jugador 1</h4>
-                                <input class="form-control" id="form-player1-username" type="text"
-                                    placeholder="Jugador 1" aria-label="default input example">
-                            </div>
-                        </div>
-                        <!-- Usuario 2 -->
-                        <div class="d-flex flex-sm-row-reverse align-items-center gap-2">
-                            <!-- selector de avatar -->
-                            <div class="d-flex flex-column justify-content-center align-items-center gap-1">
-                                <img id="preview-avatar-p2" class="svg-player avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.png"
-                                    alt="Icono del jugador Amarillo">
-                                <button type="button" class="btn btn-primary" id="selectAvatarBtn2"
-                                    data-bs-target="#avatarOptions" aria-expanded="false" aria-controls="avatarOptions">
-                                    Editar
-                                </button>
-                            </div>
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <h4 class="text-start text-sm-end w-100">Jugador 2</h4>
-                                <input class="form-control" id="form-player2-username" type="text"
-                                    placeholder="Jugador 2" aria-label="default input example">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- SELECTOR DE AVATARES -->
-                    <div id="avatarOptions" class="mb-2">
-                        <!-- Las imagenes se cargan mediante JS -->
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="btnConfirmAvatar"
-                            data-bs-dismiss="modal">Guardar y continuar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <!-- Modal Victoria de jugador-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -242,7 +172,6 @@
         </div>
     </div>
 
-    <script type="module" src="/script/scriptIndex.js"></script>
     <script type="module" src="/script/mainTest.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

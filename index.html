@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connect 4</title>
+    <link rel="shortcut icon" href="/img/icon/boy-user-avatar.png" type="image/x-icon">
     <link rel="stylesheet" href="style/design/main.css">
     <link rel="stylesheet" href="style/design/main_page/design.css">
     <link rel="stylesheet" href="style/design/main_page/background_animation.css">
@@ -153,44 +154,48 @@
     <!-- Modal partida personalizada -->
     <div class="modal fade" id="customGame" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5">Crea tu partida personalizada</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h4>Tamaño del tablero</h4>
+                    <h4 class="text-center">Tamaño del tablero</h4>
 
-                    <div>
-                        <div class="d-flex gap-2">
-                            <label for="rangeColumns" class="form-label">Número de columnas: </label>
-                            <p id="customColumns">7</p>
-                        </div>
-                        <input type="range" class="form-range" min="3" max="7" value="7" id="rangeColumns">
-                        
-                        <div class="d-flex gap-2">
-                            <label for="rangeRows" class="form-label">Número de filas: </label>
-                            <p id="customRows">6</p>
-                        </div>
-                        <input type="range" class="form-range" min="3" max="7" value="6" id="rangeRows">
+                    <div class="row board-size-customization">
+                        <!-- Ajustes tablero -->
+                        <div class="col-lg-6">
+                            <div class="d-flex flex-column">
+                                <div class="d-flex gap-2 mb-0">
+                                    <label for="rangeColumns" class="form-label mb-0">Número de columnas:</label>
+                                    <p id="customColumns" class="mb-0">7</p>
+                                </div>
+                                <input type="range" class="form-range" min="3" max="7" value="7" id="rangeColumns">
 
-                        <div class="d-flex gap-2">
-                            <label for="rangeWinLine" class="form-label">Fichas para victoria: </label>
-                            <p id="customWinLine">4</p>
+                                <div class="d-flex gap-2 mb-0">
+                                    <label for="rangeRows" class="form-label mb-0">Número de filas:</label>
+                                    <p id="customRows" class="mb-0">6</p>
+                                </div>
+                                <input type="range" class="form-range" min="3" max="7" value="6" id="rangeRows">
+
+                                <div class="d-flex gap-2 mb-0">
+                                    <label for="rangeWinLine" class="form-label mb-0">Fichas para victoria:</label>
+                                    <p id="customWinLine" class="mb-0">4</p>
+                                </div>
+                                <input type="range" class="form-range" min="3" max="7" value="4" id="rangeWinLine">
+                            </div>
                         </div>
-                        <input type="range" class="form-range" min="3" max="7" value="4" id="rangeWinLine">
                         <!-- Previsualizacion del tablero -->
-                        <div class="container-tablero-preview d-flex justify-content-center align-items-center">
+                        <div class="container-tablero-preview col-lg-6 d-flex justify-content-end">
                             <div id="customTableroPreview" class="rounded gap-1 shadow"></div>
                         </div>
                     </div>
 
-                   
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Jugar partida</button>
                 </div>
             </div>
         </div>
