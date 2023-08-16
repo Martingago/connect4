@@ -20,12 +20,12 @@ class Jugador {
  */
 const initPlayers = () => {
     if (!localStorage.getItem("jugador1")) {
-        const jugador1 = new Jugador(1,"Jugador 1", "red", "/img/avatar/humans/user-red-avatar.png");
+        const jugador1 = new Jugador(1,"Jugador 1", "red", "/img/avatar/humans/user-red-avatar.webp");
         localStorage.setItem("jugador1", JSON.stringify(jugador1));
     }
 
     if (!localStorage.getItem("jugador2")) {
-        const jugador2 = new Jugador(2,"Jugador 2", "yellow", "/img/avatar/humans/user-yellow-avatar.png");
+        const jugador2 = new Jugador(2,"Jugador 2", "yellow", "/img/avatar/humans/user-yellow-avatar.webp");
         localStorage.setItem("jugador2", JSON.stringify(jugador2));
     }
 }

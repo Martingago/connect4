@@ -1,6 +1,7 @@
 .container-tablero-preview{
     height: 336px;
 }
+/* previsualización de tablero */
 #customTableroPreview{
     display: grid;
     background-color: rgb(243, 242, 242);
@@ -19,4 +20,13 @@
 }
 .winner{
     background-color: green;
+}
+
+/* Otros ajustes */
+
+.first-movement-settings{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .75rem;
+    align-items: center;
 }

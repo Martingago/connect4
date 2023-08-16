@@ -25,6 +25,8 @@ const crearListaAvatares = () => {
             avatar.src = avatarArray[i].url; //Añadimos src del imagen
             avatar.alt = avatarArray[i].alt; //añadido texto alternativo
             avatar.dataset.avatar = avatarArray[i].url; //Dataset del avatar con la URL de la imagen
+            avatar.setAttribute("loading", "lazy");
+            avatar.setAttribute("title", "Imagen de avatar")
             containerAvatares.appendChild(avatar);
         }
         sectionAvatares.appendChild(containerAvatares);
