@@ -1,5 +1,5 @@
 "use strict";
-import { createBoard } from "../board/board.js";
+import { createBoard, getCols, getRows } from "../board/board.js";
 import { setNextTurnPlayerTxt } from "../view/modifyUserTxt.js";
 import { activateClickOnTablero } from "./activateBoardFunctions.js";
 export {generateTablero}
@@ -13,7 +13,7 @@ const generateTablero = async () => {
     // Generar el tablero en el siguiente ciclo de animación para darle tiempo de mostrar el loading
     await new Promise((resolve) => {
         requestAnimationFrame(() => {
-            tableroReady = createBoard(); //genera el tablero virtual y visual de la aplicacion
+            tableroReady = createBoard(getRows(), getCols()); //genera el tablero virtual y visual de la aplicacion
             activateClickOnTablero();
             resolve();
         });

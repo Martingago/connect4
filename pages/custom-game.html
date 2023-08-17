@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>¡Desafía a un Amigo en una Partida de Connect4 en Modo 2 Jugadores!</title>
+    <meta name="description" content="¡Compite con amigos en emocionantes partidas de Connect4 en modo 2 jugadores! ¡Gana y demuestra quién domina el tablero!">
+    <link rel="shortcut icon" href="/img/icon/boy-user-avatar.webp" type="image/x-icon">
+    <link rel="stylesheet" href="/style/design/tablero.min.css">
+    <link rel="stylesheet" href="/style/design/main.min.css">
+    <link rel="stylesheet" href="/style/design/tableroContainer.min.css">
+    <link rel="stylesheet" href="/style/design/userElements/userElements.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="page-container">
+
+        <!-- Navegador web -->
+        <nav class="navbar bg-body-tertiary sticky-top">
+            <div class="container-fluid justify-content-start">
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Elementos -->
+                <ul class="navbar-nav d-flex flex-row gap-4 justify-content-center ms-4">
+                    <li class="nav-item">
+                        <a class="fs-5 nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fs-5 nav-link" href="#">Jugar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fs-5 nav-link" href="#">Reglas</a>
+                    </li>
+                </ul>
+                <!-- OffCanvas -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Conect4</h5>
+                        <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Visita mi Portfolio</a>
+                                <a class="nav-link" aria-current="page" href="#">Sobre este proyecto</a>
+                            </li>
+                            <li class="nav-item">
+                                <ul class="navbar-nav justify-content-center gap-3 flex-row flex-grow-1">
+                                    <li><a class="nav-link fs-3" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a class="nav-link fs-3" href="#"> <i class="fa-brands fa-github"></i></a></li>
+                                    <li> <a class="nav-link fs-3" href="#"> <i class="fa-solid fa-envelope"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Seccion principal de la web: Tablero, puntuaciones, turno  -->
+        <div class="loading">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="section-connect4-game">
+            <h2 class="title-game-connect4"><span class="logo-letter">Connect</span><span class="logo-number">4</span>
+            </h2> 
+            <div class="tablero-container">
+                <!-- Tablero -->
+                <div class="container-tablero-juego d-flex flex-column gap-2">
+                    <section class="tablero border border-3 border-dark">
+                    </section>
+                </div>
+                <!-- columna izquierda -->
+                <div
+                    class="element-player-1 d-flex flex-row flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
+                    <img id="avatarP1" class="svg-player-score avatar-player-1" src="/img/avatar/humans/user-red-avatar.webp"
+                        alt="imagen del jugador rojo">
+                    <span
+                        class="d-flex flex-column flex-md-row flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
+                        <p id="usernameP1" class="p-player-name-1 mb-0">Jugador1</p>
+                        <p id="scoreBoardP1" class="p-user-score fs-3 mb-1">0</p>
+                    </span>
+                </div>
+                <!-- Columna derecha -->
+                <div
+                    class="element-player-2 d-flex flex-row-reverse flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
+                    <img id="avatarP2" class="svg-player-score avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.webp"
+                        alt="imagen del jugador rojo">
+                    <span
+                        class="d-flex flex-column flex-md-row-reverse flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
+                        <p id="usernameP2" class="p-player-name-2 mb-0">Jugador2</p>
+                        <p id="scoreBoardP2" class="p-user-score fs-3 mb-1">0</p>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Submenu e informacion del juego -->
+            <div class="aside-game-info position-relative">
+                <div
+                    class="section-turn-player d-flex flex-column justify-content-center align-items-center position-relative">
+                    <p class="mb-0">Turno de: </p>
+                    <p class="player-turn-txt"> default </p>
+                </div>
+                <button type="button" class="btn-reset-game btn btn-primary position-absolute end-0 top-50"
+                    data-bs-toggle="modal" data-bs-target="#resetGameModal">Reiniciar Partida <i
+                        class="fa-solid fa-rotate-right"></i></button>
+            </div>
+        </div>
+
+        <button id="reset-score" type="button" class="btn btn-primary">
+            Reiniciar Puntuación
+        </button>
+
+        <!-- Modal Victoria de jugador-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content position-relative ">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 p-2 shadow-none"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body m-auto d-flex flex-column justify-content-center align-items-center">
+                        <p class="fs-4 text-center m-auto">Woooooohoo</p>
+                        <h3 class="player-winner-name modal-title fs-1 text-center" id="exampleModalLabel">Default</h3>
+                        <img class="modal-win-img" src="/img/general/img-placeholder-web.png"
+                            alt="Imagen sin especificar, placeholder web">
+                        <p class="resultado-players fs-3 text-center m-auto">Default txt</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ver resultado</button>
+                        <button type="button" class="btn-restart-modal btn btn-primary">Revancha</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal reiniciar partida -->
+        <div class="modal fade" id="resetGameModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content position-relative">
+
+                    <div class="modal-body">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 p-2"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        <p class="text-center fs-4 mt-3 mb-0 fw-800 p-auto">¿Seguro que quieres reiniciar la partida?
+                        </p>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn-restart-game btn btn-secondary"
+                            data-bs-dismiss="modal">Reiniciar <i class="fa-solid fa-rotate-right"></i></button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar <i
+                                class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/script/partidaPersonalizada.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 "use strict";
 
-import { getCols, getRows, getGameBoard,} from "../board/board.js";
+import { getCols, getRows, getGameBoard, getFichasVictoria,} from "../board/board.js";
 import { getCurrentPlayer } from "../../users/players/players.js";
 export { checkWin, showWinnerLine, getVictoria, setVictoria };
 
@@ -40,7 +40,7 @@ const checkWin = (row, col) => {
                 r += sign * dx;
                 c += sign * dy;
             }
-            if (count >= 4) {
+            if (count >= getFichasVictoria()) {
                 setVictoria(true);
                 return linePositions;
             }

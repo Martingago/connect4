@@ -1,12 +1,11 @@
 "use strict";
 import { getCurrentPlayer } from "../../users/players/players.js";
-
-
-export { createBoard, dropToken, checkTableroEmpty, getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol }
+export { createBoard, dropToken, checkTableroEmpty,setCols, setRows, setFichasVictoria,  getCols, getRows, getGameBoard, setGameBoard, getCurrentRow, getCurrentCol, getFichasVictoria }
 
 //Elementos del tablero:
 let rows = 6;
 let cols = 7;
+let fichasVictoria = 4;
 let gameBoard = [];
 let currentRow;
 let currentCol;
@@ -17,6 +16,17 @@ const getCurrentRow = () => {
 
 const getCurrentCol = () => {
     return currentCol;
+}
+
+const setRows = (value) => {
+    rows = value;
+}
+const setCols = (value) => {
+    cols = value;
+}
+
+const setFichasVictoria = (value) => {
+    fichasVictoria = value;
 }
 
 const getCols = () => {
@@ -30,6 +40,10 @@ const getGameBoard = () => {
     return gameBoard;
 }
 
+const getFichasVictoria = () => {
+    return fichasVictoria;
+}
+
 const setGameBoard = (newGameBoard) => {
     gameBoard = newGameBoard;
 
@@ -39,7 +53,7 @@ const setGameBoard = (newGameBoard) => {
  * Funcion que crea el tablero virtual: Array de 2 dimensiones y lo traslada al apartado visual para que el usuario pueda visualizarlo =>
  * Se genera tambien un div con un class llamado "celda", cada uno de ellos tiene un dataset con el valor de su fila y columna correspondiente
  */
-const createBoard = () => {
+const createBoard = (rows, cols) => {
     const tablero = document.querySelector(".tablero");
     for (let row = 0; row < rows; row++) {
         gameBoard[row] = [];
@@ -50,7 +64,7 @@ const createBoard = () => {
             celda.dataset.row = row;
             // celda.textContent = `r:${row} c:${col}`
             tablero.appendChild(celda);
-            gameBoard[row][col] = null; 
+            gameBoard[row][col] = null;
         }
     }
     tablero.style.gridTemplateColumns = `repeat(${cols}, auto)`;

@@ -9,13 +9,11 @@ import { hideModalGame } from "./game_logic/modals/gameModalContent.js";
 import { updatePlayersTableData } from "./game_logic/view/updatePlayerData.js";
 import { resetPlayersScore } from "./users/hooks/updateChanges.js";
 import { setCols, setFichasVictoria, setRows } from "./game_logic/board/board.js";
+import { getCustomGame } from "./game_logic/custom_game/dataStore/constructorGame.js";
 
 
 inicializarDatosUsuarios();
 setCurrentPlayer(jugador1);
-setCols(7)
-setRows(6)
-setFichasVictoria(3)
 generateTablero();
 updatePlayersTableData();
 

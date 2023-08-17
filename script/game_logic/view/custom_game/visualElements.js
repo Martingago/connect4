@@ -1,5 +1,6 @@
 "use strict";
-import { setCustomCols, setCustomRows, setCustomWinnerLine, getCustomCols, getCustomRows, getCustomWinnerLine } from "../../custom_game/main.js";
+import { getCustomCols, getCustomRows, setCustomCols, setCustomRows } from "../../custom_game/dataStore/constructorGame.js";
+import { setCustomWinnerLine } from "../../custom_game/dataStore/constructorGame.js";
 export { updRangeCols, updRangeRows, createCustomBoard, updRangeWinLine }
 
 const currentColsTxt = document.querySelector("#customColumns");
