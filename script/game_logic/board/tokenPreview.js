@@ -37,7 +37,7 @@ const handleCellHover = (event) => {
         let columna = event.target.dataset.column;
         let currentHover = getCurrentPlayer()._color + "hover";
         //Posiciona la previsualizacion en la pimera posicion vertical disponible para el usuario
-        for (let row = rows - 1; row >= 0; row--) {
+        for (let row = getRows() - 1; row >= 0; row--) {
             if (!gameBoard[row][columna]) {
                 const cell = document.querySelector(`[data-row="${row}"][data-column="${columna}"]`);
                 cell.classList.add(currentHover);

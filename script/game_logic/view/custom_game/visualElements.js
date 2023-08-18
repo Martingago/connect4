@@ -1,6 +1,6 @@
 "use strict";
-import { getCustomCols, getCustomRows, setCustomCols, setCustomRows } from "../../custom_game/dataStore/constructorGame.js";
-import { setCustomWinnerLine } from "../../custom_game/dataStore/constructorGame.js";
+import { getCols, getRows, getFichasVictoria, setCols, setRows, setFichasVictoria } from "../../board/board.js";
+
 export { updRangeCols, updRangeRows, createCustomBoard, updRangeWinLine }
 
 const currentColsTxt = document.querySelector("#customColumns");
@@ -16,17 +16,16 @@ const customTableroPreview = document.querySelector("#customTableroPreview");
 
 const updRangeCols = () => {
     currentColsTxt.textContent = rangeCols.value;
-    setCustomCols(Number(rangeCols.value));  
+    setCols(Number(rangeCols.value));  
 }
 const updRangeRows = () => {
     currentRowsTxt.textContent = rangeRows.value;
-    setCustomRows(Number(rangeRows.value))
+    setRows(Number(rangeRows.value))
 }
 
 const updRangeWinLine = () => {
     currentWinLineTxt.textContent = rangeWinLine.value;
-    setCustomWinnerLine(Number(rangeWinLine.value));
-    
+    setFichasVictoria(Number(rangeWinLine.value));
 }
 
 
@@ -47,10 +46,10 @@ const createCustomBoard = (cols, rows, winnerLine) => {
         }
     }
     //Alterna linea horizontal/vertical de victoria en base al valor mayor de filas/columnas
-    if (getCustomCols() > getCustomRows()) {
+    if (getCols() > getRows()) {
         winnerHorizontal(winnerLine);
     }
-    else if (getCustomCols() < getCustomRows()) {
+    else if (getCols() < getRows()) {
         winnerVertical(winnerLine)
     } else {
         winnerHorizontal(winnerLine);
@@ -78,8 +77,8 @@ const winnerHorizontal = (winnerLine) => {
  */
 const winnerVertical = (winnerLine) => {
     const celdas = customTableroPreview.children;
-    const col = getCustomCols();
-    const row = getCustomRows();
+    const col = getCols();
+    const row = getRows();
     for (let i = row - winnerLine; i < row; i++) {
         const posicion = col * i;
         celdas[posicion].classList.add("winner")

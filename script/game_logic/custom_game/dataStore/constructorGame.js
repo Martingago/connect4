@@ -1,5 +1,10 @@
-"use strict";
-export { setCustomCols, setCustomRows, setCustomWinnerLine, setStartPlayer, getCustomCols, getCustomRows, getCustomWinnerLine, createCustomGame, getCustomGame }
+ "use strict";
+import { jugador1, jugador2 } from "../../../users/initUsers.js";
+import { setCurrentPlayer } from "../../../users/players/players.js";
+ import { setCols,setRows, setFichasVictoria, getCols, getRows, getFichasVictoria } from "../../board/board.js";
+ export {createCustomGame, setBoardData, setStartPlayer, getStartPlayer}
+
+let player = 1;
 
 class customGame {
     constructor(rows, cols, wins, player) {
@@ -10,58 +15,57 @@ class customGame {
     }
 }
 
-let customCols = 7;
-let customRows = 6;
-let customWinnerLine = 4;
-let startPlayer = 1;
 
-const setCustomCols = (value) => {
-    customCols = value;
-}
-const setCustomRows = (value) => {
-    customRows = value;
-}
-const setCustomWinnerLine = (value) => {
-    customWinnerLine = value;
-}
 
 const setStartPlayer = (value) => {
-    startPlayer = value;
+    player = value;
 }
 
-const getCustomCols = () => {
-    return customCols;
-}
-const getCustomRows = () => {
-    return customRows;
-}
-const getCustomWinnerLine = () => {
-    return customWinnerLine;
-}
-
-const getStartPlayer = () => {
-    return startPlayer;
-}
+ const getStartPlayer = () => {
+    return player;
+ }
 
 
 const createCustomGame = () => {
-    
-    let player = getStartPlayer();
-    console.log(player)
-    if(player === 3){
-        player = createRandomStartPlayer();
-    }
-    const juegoPersonalizado = new customGame(getCustomRows(), getCustomCols(), getCustomWinnerLine(), player);
+    const juegoPersonalizado = new customGame(getRows(), getCols(), getFichasVictoria(), getStartPlayer());
     sessionStorage.setItem("custom_game", JSON.stringify(juegoPersonalizado));
 }
 
+const setBoardData = () => {
+    const boardData = JSON.parse(sessionStorage.getItem("custom_game"));
+    if(boardData){
+        setCols(boardData._cols);
+        setRows(boardData._rows);
+        setFichasVictoria(boardData._wins);
+        player = boardData._player;
+        setJugadorInicial();
+    }else{
+        setCols(7);
+        setRows(6);
+        setFichasVictoria(4);
+        setCurrentPlayer(jugador1);
+        console.log("has entrado por donde has querido...")
+    }
+
+}
 
 const createRandomStartPlayer = () => {
     const r = Math.floor(Math.random() * 2) + 1;
     return r;
 }
 
-const getCustomGame = () => {
-    const cg = sessionStorage.getItem('custom_game');
-    console.log(cg)
+const setJugadorInicial = () => {
+    while (player !== 1 && player !== 2) {
+        player = createRandomStartPlayer();
+    }
+    switch(player){
+        case 1:
+            console.log("jugador inicial: 1")
+            setCurrentPlayer(jugador1);
+            break;
+        case 2:
+            console.log("jugador inicial: 2")
+            setCurrentPlayer(jugador2);
+            break;
+    }
 }

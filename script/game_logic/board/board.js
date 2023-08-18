@@ -62,7 +62,6 @@ const createBoard = (rows, cols) => {
             celda.classList.add("celda");
             celda.dataset.column = col;
             celda.dataset.row = row;
-            // celda.textContent = `r:${row} c:${col}`
             tablero.appendChild(celda);
             gameBoard[row][col] = null;
         }

@@ -8,14 +8,17 @@ import { resetGame } from "./game_logic/game_management/restartGame.js";
 import { hideModalGame } from "./game_logic/modals/gameModalContent.js";
 import { updatePlayersTableData } from "./game_logic/view/updatePlayerData.js";
 import { resetPlayersScore } from "./users/hooks/updateChanges.js";
-import { setCols, setFichasVictoria, setRows } from "./game_logic/board/board.js";
-import { getCustomGame } from "./game_logic/custom_game/dataStore/constructorGame.js";
+import { setBoardData } from "./game_logic/custom_game/dataStore/constructorGame.js";
+import { getFichasVictoria } from "./game_logic/board/board.js";
 
 
 inicializarDatosUsuarios();
-setCurrentPlayer(jugador1);
+setBoardData();
 generateTablero();
 updatePlayersTableData();
+const numberLogo = document.querySelector(".logo-number");
+numberLogo.textContent = getFichasVictoria();
+
 
 const tablero = document.querySelector(".tablero");
 tablero.addEventListener("click", handleCellClick);
