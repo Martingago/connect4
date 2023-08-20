@@ -71,9 +71,12 @@
     width: 100%;
 }
 
-.btn-reset-game {
-    transform: translateY(-50%);
+/* Elemento del tablero: botones de juego */
+
+.btn-reset-score , .btn-reset-game{
+    width: 200px;
 }
+
 
 
 /* Elementos de la tabla de jugador: */
@@ -129,6 +132,9 @@
     .element-player-2 {
         order: 2;
     }
+    .btn-reset-score , .btn-reset-game{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 720px) {
@@ -136,4 +142,10 @@
         width: 45px;
         height: 45px;
     }
+
+    .aside-game-info{
+        height: 70px;
+    }
+
+    
 }

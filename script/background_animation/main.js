@@ -1,10 +1,10 @@
 "use strict";
 
-export { rows, cols, animacionFichas }
+export { Bgrows, Bgcols, animacionFichas }
 import { crearTableroAnimation, addFichaAleatoria } from "./background_animation.js";
 //Elementos del tablero:
-let rows = 4;
-let cols = 7;
+let Bgrows = 4;
+let Bgcols = 7;
 
 //Genera el tablero
 crearTableroAnimation();
