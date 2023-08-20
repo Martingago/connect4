@@ -5,10 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>¡Desafía a un Amigo en una Partida de Connect4 en Modo 2 Jugadores!</title>
-    <meta name="description" content="¡Compite con amigos en emocionantes partidas de Connect4 en modo 2 jugadores! ¡Gana y demuestra quién domina el tablero!">
+    <meta name="description"
+        content="¡Compite con amigos en emocionantes partidas de Connect4 en modo 2 jugadores! ¡Gana y demuestra quién domina el tablero!">
     <link rel="shortcut icon" href="/img/icon/boy-user-avatar.webp" type="image/x-icon">
     <link rel="stylesheet" href="/style/design/tablero.min.css">
     <link rel="stylesheet" href="/style/design/main.min.css">
+    <link rel="stylesheet" href="/style/design/main_page/background_animation.min.css">
     <link rel="stylesheet" href="/style/design/tableroContainer.min.css">
     <link rel="stylesheet" href="/style/design/userElements/userElements.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,6 +21,9 @@
 </head>
 
 <body>
+    <!-- Animacion del fondo -->
+    <div id="background-animation"></div>
+
     <div class="page-container">
 
         <!-- Navegador web -->
@@ -76,9 +81,10 @@
             </div>
         </div>
 
-        <div class="section-connect4-game">
-            <h2 class="title-game-connect4"><span class="logo-letter">Connect</span><span class="logo-number">4</span>
-            </h2> 
+        <div class="section-connect4-game ">
+            <h2 class="title-game-connect4 mb-0 mt-0 mt-sm-2 mt-lg-4"><span class="logo-letter">Connect</span><span
+                    class="logo-number">4</span>
+            </h2>
             <div class="tablero-container">
                 <!-- Tablero -->
                 <div class="container-tablero-juego d-flex flex-column gap-2">
@@ -88,8 +94,8 @@
                 <!-- columna izquierda -->
                 <div
                     class="element-player-1 d-flex flex-row flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
-                    <img id="avatarP1" class="svg-player-score avatar-player-1" src="/img/avatar/humans/user-red-avatar.webp"
-                        alt="imagen del jugador rojo">
+                    <img id="avatarP1" class="svg-player-score avatar-player-1"
+                        src="/img/avatar/humans/user-red-avatar.webp" alt="imagen del jugador rojo">
                     <span
                         class="d-flex flex-column flex-md-row flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
                         <p id="usernameP1" class="p-player-name-1 mb-0">Jugador1</p>
@@ -99,8 +105,8 @@
                 <!-- Columna derecha -->
                 <div
                     class="element-player-2 d-flex flex-row-reverse flex-lg-column align-items-center justify-content-around bg-body-tertiary p-1 border border-3 border-dark">
-                    <img id="avatarP2" class="svg-player-score avatar-player-2" src="/img/avatar/humans/user-yellow-avatar.webp"
-                        alt="imagen del jugador rojo">
+                    <img id="avatarP2" class="svg-player-score avatar-player-2"
+                        src="/img/avatar/humans/user-yellow-avatar.webp" alt="imagen del jugador rojo">
                     <span
                         class="d-flex flex-column flex-md-row-reverse flex-lg-column justify-content-center align-items-center gap-md-2 gap-lg-0">
                         <p id="usernameP2" class="p-player-name-2 mb-0">Jugador2</p>
@@ -116,15 +122,20 @@
                     <p class="mb-0">Turno de: </p>
                     <p class="player-turn-txt"> default </p>
                 </div>
-                <button type="button" class="btn-reset-game btn btn-primary position-absolute end-0 top-50"
-                    data-bs-toggle="modal" data-bs-target="#resetGameModal">Reiniciar Partida <i
-                        class="fa-solid fa-rotate-right"></i></button>
+
             </div>
+            <!-- Botones de partida -->
+            <div class="d-flex flex-column-reverse flex-sm-row  gap-2 w-100 justify-content-between justify-content-md-evenly mb-2">
+                <button type="button" class="btn-reset-score btn btn-primary" data-bs-toggle="modal" data-bs-target="#resetGameScore">
+                    Reiniciar Puntuación <i class="fa-solid fa-crown"></i>
+                </button>
+                <button type="button" class="btn-reset-game btn btn-primary " data-bs-toggle="modal"
+                    data-bs-target="#resetGameModal">Reiniciar Partida <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </div>
+
         </div>
 
-        <button id="reset-score" type="button" class="btn btn-primary">
-            Reiniciar Puntuación
-        </button>
 
         <!-- Modal Victoria de jugador-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -170,9 +181,35 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <script type="module" src="/script/partidaPersonalizada.js"></script>
+        <!-- Modal reiniciar Score-->
+        <div class="modal fade" id="resetGameScore" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content position-relative">
+
+                    <div class="modal-body">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 p-2"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        <p class="text-center fs-4 mt-3 mb-0 fw-800 p-auto">¿Seguro que quieres reiniciar la puntuación
+                            de los jugadores?
+                        </p>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" id="reset-score" class="btn-restart-game btn btn-secondary"
+                            data-bs-dismiss="modal">Reiniciar <i class="fa-solid fa-rotate-right"></i></button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar <i
+                                class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="/script/background_animation/main.js" type="module" defer></script>
+    <script type="module" src="/script/partidaPersonalizada.js" defer></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -180,6 +217,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>

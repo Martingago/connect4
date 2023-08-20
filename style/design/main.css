@@ -25,6 +25,14 @@ body {
     backdrop-filter: blur(2px);
 }
 
+/* navegador */
+
+.offcanvas-body{
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+
 .modal-win-img {
     max-width: 250px;
     margin: auto;
