@@ -26,39 +26,70 @@
 
     <!-- Contenido principal -->
     <div class="page-container backdrop-filter-blur">
-        <!-- Navegador web -->
-        <nav class="navbar bg-body-transparent sticky-top">
-            <div class="container-fluid justify-content-start">
-                <button class="navbar-toggler border-2 shadow-none" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Conect4</h5>
-                        <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Visita mi Portfolio</a>
-                                <a class="nav-link" aria-current="page" href="#">Sobre este proyecto</a>
-                            </li>
-                            <li class="nav-item">
-                                <ul class="navbar-nav justify-content-center gap-3 flex-row flex-grow-1">
-                                    <li><a class="nav-link fs-3" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a class="nav-link fs-3" href="#"> <i class="fa-brands fa-github"></i></a></li>
-                                    <li> <a class="nav-link fs-3" href="#"> <i class="fa-solid fa-envelope"></i></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+             <!-- Navegador web -->
+             <nav class="navbar bg-body-transparent sticky-top">
+                <div class="container-fluid position-relative justify-content-start">
+                    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <!-- OffCanvas -->
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header pb-0">
+                            <h5 class="offcanvas-title text-center w-100" id="offcanvasNavbarLabel">
+                                <span class="logo-letter">Connect</span><span class="logo-number">4</span>
+                            </h5>
+                            
+                            <button type="button" class="btn-close shadow-none position-absolute m-2 top-0 end-0"
+                                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body pt-0">
+                            <!-- apartados web -->
+                            <ul class="navbar-nav ">
+                                <hr>
+                                <li class="nav-item ">
+                                    <a class="fs-5 nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="fs-5 nav-link" href="/pages/play.html">Partida normal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="fs-5 nav-link" href="/pages/custom-game.html">Partida personalizada</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="fs-5 nav-link" href="#">Reglas</a>
+                                </li>
+                            </ul>
+                            <!-- Otras paginas de interes -->
+                            <ul class="navbar-nav justify-content-end flex-grow-1">
+                                <hr>
+                                <li class="nav-item">
+                                    <a class="nav-link fs-5" aria-current="page" href="#">Visita mi Portfolio</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link fs-5" aria-current="page" href="#">Sobre este proyecto</a>
+                                </li>
+                                <!-- Social media -->
+                                <li class="nav-item">
+                                    <ul class="navbar-nav justify-content-center gap-3 flex-row flex-grow-1">
+                                        <li>
+                                            <a class="nav-link fs-2" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link fs-2" href="#"> <i class="fa-brands fa-github"></i></a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link fs-2" href="#"> <i class="fa-solid fa-envelope"></i></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
         <!-- Titulo y botones de inicio -->
         <div class="container main-section-page pb-2 pb-sm-3 pb-md-5">
             <h2 class="title-game-connect4 text-center mb-0 mt-0 mt-sm-2 mt-lg-4">

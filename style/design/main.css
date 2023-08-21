@@ -32,6 +32,10 @@ body {
     grid-template-rows: 1fr auto;
 }
 
+.offcanvas-title{
+    font-size: 2.5rem;
+    font-family: LilitiaOne;
+}
 
 .modal-win-img {
     max-width: 250px;

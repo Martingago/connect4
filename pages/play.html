@@ -28,7 +28,7 @@
 
         <!-- Navegador web -->
         <nav class="navbar bg-body-transparent sticky-top">
-            <div class="container-fluid justify-content-start">
+            <div class="container-fluid position-relative justify-content-start">
                 <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -37,17 +37,18 @@
                 <!-- OffCanvas -->
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title text-center w-100 fs-1" id="offcanvasNavbarLabel">
-                            <span class="logo-letter">Connect</span><span
-                    class="logo-number">4</span>
+                    <div class="offcanvas-header pb-0">
+                        <h5 class="offcanvas-title text-center w-100" id="offcanvasNavbarLabel">
+                            <span class="logo-letter">Connect</span><span class="logo-number">4</span>
                         </h5>
-                        <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
+                        
+                        <button type="button" class="btn-close shadow-none position-absolute m-2 top-0 end-0"
+                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
+                    <div class="offcanvas-body pt-0">
                         <!-- apartados web -->
                         <ul class="navbar-nav ">
+                            <hr>
                             <li class="nav-item ">
                                 <a class="fs-5 nav-link active" aria-current="page" href="/index.html">Inicio</a>
                             </li>
@@ -62,7 +63,8 @@
                             </li>
                         </ul>
                         <!-- Otras paginas de interes -->
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                            <hr>
                             <li class="nav-item">
                                 <a class="nav-link fs-5" aria-current="page" href="#">Visita mi Portfolio</a>
                             </li>
