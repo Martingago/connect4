@@ -21,10 +21,6 @@ body {
     flex-direction: column;
 }
 
-.backdrop-filter-blur{
-    backdrop-filter: blur(2px);
-}
-
 /* navegador */
 
 .offcanvas-body{

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/style/design/main_page/background_animation.min.css">
     <link rel="stylesheet" href="/style/design/tableroContainer.min.css">
     <link rel="stylesheet" href="/style/design/userElements/userElements.min.css">
+    <link rel="stylesheet" href="/style/design/custom_game/customGameBoard.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -50,13 +51,17 @@
                         <ul class="navbar-nav ">
                             <hr>
                             <li class="nav-item ">
-                                <a class="fs-5 nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                                <a class="fs-5 nav-link active" aria-current="page" href="/index.html"> Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="fs-5 nav-link" href="/pages/play.html">Partida normal</a>
+                                <a class="fs-5 nav-link" href="/pages/play.html"> Partida normal</a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="fs-5 nav-link" href="/pages/custom-game.html">Partida personalizada</a>
+                                <a class="fs-5 nav-link" href="/pages/custom-game.html"> Partida personalizada</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="fs-5 nav-link" href="/index.html"> Personalizar avatar</a>
                             </li>
                             <li class="nav-item">
                                 <!-- Button trigger modal -->
@@ -79,10 +84,13 @@
                             <li class="nav-item">
                                 <ul class="navbar-nav justify-content-center gap-3 flex-row flex-grow-1">
                                     <li>
-                                        <a class="nav-link fs-2" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                        <a class="nav-link fs-2"
+                                            href="https://www.linkedin.com/in/mart%C3%ADn-gago-chor%C3%A9n-6b1814241/"
+                                            target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                                     </li>
                                     <li>
-                                        <a class="nav-link fs-2" href="#"> <i class="fa-brands fa-github"></i></a>
+                                        <a class="nav-link fs-2" href="https://github.com/Martingago" target="_blank">
+                                            <i class="fa-brands fa-github"></i></a>
                                     </li>
                                     <li>
                                         <a class="nav-link fs-2" href="#"> <i class="fa-solid fa-envelope"></i></a>
@@ -95,10 +103,10 @@
             </div>
         </nav>
 
-        <!-- Modal -->
-        <div class="modal fade modal-lg modal-dialog-scrollable" id="modalNormas" data-bs-backdrop="modal" data-bs-keyboard="false"
-            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <!-- Modal normas -->
+        <div class="modal fade modal-lg " id="modalNormas" data-bs-backdrop="modal"
+            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title fs-5 text-center" id="staticBackdropLabel">Reglas de la partida</h5>
@@ -106,7 +114,10 @@
                     </div>
                     <div class="modal-body">
 
-                        <p>Bienvenido al emocionante juego Connect4, también conocido como Cuatro en línea. Connect4 es un juego de estrategia en el que dos jugadores compiten por ser el primero en conectar cuatro fichas de su color en línea, ya sea vertical, horizontal o diagonalmente, en un tablero vertical de 7 columnas y 6 filas.</p>
+                        <p>Bienvenido al emocionante juego Connect4, también conocido como Cuatro en línea. Connect4 es
+                            un juego de estrategia en el que dos jugadores compiten por ser el primero en conectar
+                            cuatro fichas de su color en línea, ya sea vertical, horizontal o diagonalmente, en un
+                            tablero vertical de 7 columnas y 6 filas.</p>
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <h6>Elige tu color</h6>
@@ -144,9 +155,7 @@
                                 <h6>¡A jugar!</h6>
                                 <p>
                                     Disfruta del juego Connect4 y pon a prueba tus
-                                    habilidades estratégicas contra amigos, familiares o incluso la inteligencia
-                                    artificial
-                                    si estás jugando en línea.
+                                    habilidades estratégicas contra amigos o familiares
                                 </p>
                             </li>
                         </ul>
@@ -166,7 +175,7 @@
         </div>
 
         <div class="section-connect4-game ">
-            <h2 class="title-game-connect4 mb-0 mt-0 mt-sm-2"><span class="logo-letter">Connect</span><span
+            <h2 class="title-game-connect4 my-0"><span class="logo-letter">Connect</span><span
                     class="logo-number">4</span>
             </h2>
             <div class="tablero-container">
@@ -215,6 +224,8 @@
                     data-bs-target="#resetGameScore">
                     Reiniciar Puntuación <i class="fa-solid fa-crown"></i>
                 </button>
+                <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#customGame">Partida personalizada</button>
                 <button type="button" class="btn-reset-game btn btn-primary " data-bs-toggle="modal"
                     data-bs-target="#resetGameModal">Reiniciar Partida <i class="fa-solid fa-rotate-right"></i>
                 </button>
@@ -222,6 +233,64 @@
 
         </div>
 
+        <!-- Modal configuracion de partida -->
+        <div class="modal fade" id="customGame" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Crea tu partida personalizada</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row board-size-customization">
+                            <!-- Ajustes de la partida -->
+                            <div class="col-lg-6">
+                                <h4 class="text-center text-lg-start mb-4">Ajustes de partida</h4>
+                                <div class="d-flex flex-column">
+                                    <div class="first-movement-settings mb-2">
+                                        <p class="mb-0">Primer movimiento: </p>
+                                        <select class="form-select form-select-sm" id="first-movement-player"
+                                            aria-label="Selector primer jugador en mover ficha">
+                                            <option value="1" selected>Jugador 1</option>
+                                            <option value="2">Jugador 2</option>
+                                            <option value="3">Aleatorio</option>
+                                        </select>
+                                    </div>
+                                    <div class="d-flex gap-2 mb-0">
+                                        <label for="rangeColumns" class="form-label mb-0">Número de columnas:</label>
+                                        <p id="customColumns" class="mb-0">7</p>
+                                    </div>
+                                    <input type="range" class="form-range" min="3" max="7" value="7" id="rangeColumns">
+
+                                    <div class="d-flex gap-2 mb-0">
+                                        <label for="rangeRows" class="form-label mb-0">Número de filas:</label>
+                                        <p id="customRows" class="mb-0">6</p>
+                                    </div>
+                                    <input type="range" class="form-range" min="3" max="7" value="6" id="rangeRows">
+
+                                    <div class="d-flex gap-2 mb-0">
+                                        <label for="rangeWinLine" class="form-label mb-0">Fichas para victoria:</label>
+                                        <p id="customWinLine" class="mb-0">4</p>
+                                    </div>
+                                    <input type="range" class="form-range" min="3" max="7" value="4" id="rangeWinLine">
+                                </div>
+
+                            </div>
+                            <!-- Previsualizacion del tablero -->
+                            <div class="container-tablero-preview col-lg-6 d-flex justify-content-end">
+                                <div id="customTableroPreview" class="rounded gap-1 shadow"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <a href="/index.html"  class="btn btn-secondary">Cancelar<a>
+                        <button id="start-custom-game" data-bs-dismiss="modal" class="btn btn-primary">Jugar
+                            partida</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Modal Victoria de jugador-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -293,9 +362,11 @@
         </div>
 
     </div>
-    <script src="/script/background_animation/main.js" type="module" defer></script>
-    <script type="module" src="/script/partidaPersonalizada.js" defer></script>
 
+
+    <script src="/script/background_animation/main.js" type="module" defer></script>
+    <script src="/script/game_logic/custom_game/main.js" type="module" defer></script>
+    <script type="module" src="/script/partidaPersonalizada.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

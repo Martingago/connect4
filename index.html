@@ -26,70 +26,135 @@
 
     <!-- Contenido principal -->
     <div class="page-container backdrop-filter-blur">
-             <!-- Navegador web -->
-             <nav class="navbar bg-body-transparent sticky-top">
-                <div class="container-fluid position-relative justify-content-start">
-                    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <!-- OffCanvas -->
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header pb-0">
-                            <h5 class="offcanvas-title text-center w-100" id="offcanvasNavbarLabel">
-                                <span class="logo-letter">Connect</span><span class="logo-number">4</span>
-                            </h5>
-                            
-                            <button type="button" class="btn-close shadow-none position-absolute m-2 top-0 end-0"
-                                data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body pt-0">
-                            <!-- apartados web -->
-                            <ul class="navbar-nav ">
-                                <hr>
-                                <li class="nav-item ">
-                                    <a class="fs-5 nav-link active" aria-current="page" href="/index.html">Inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="fs-5 nav-link" href="/pages/play.html">Partida normal</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="fs-5 nav-link" href="/pages/custom-game.html">Partida personalizada</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="fs-5 nav-link" href="#">Reglas</a>
-                                </li>
-                            </ul>
-                            <!-- Otras paginas de interes -->
-                            <ul class="navbar-nav justify-content-end flex-grow-1">
-                                <hr>
-                                <li class="nav-item">
-                                    <a class="nav-link fs-5" aria-current="page" href="#">Visita mi Portfolio</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link fs-5" aria-current="page" href="#">Sobre este proyecto</a>
-                                </li>
-                                <!-- Social media -->
-                                <li class="nav-item">
-                                    <ul class="navbar-nav justify-content-center gap-3 flex-row flex-grow-1">
-                                        <li>
-                                            <a class="nav-link fs-2" href="#"><i class="fa-brands fa-linkedin"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link fs-2" href="#"> <i class="fa-brands fa-github"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link fs-2" href="#"> <i class="fa-solid fa-envelope"></i></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+           <!-- Navegador web -->
+           <nav class="navbar bg-body-transparent sticky-top">
+            <div class="container-fluid position-relative justify-content-start">
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- OffCanvas -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header pb-0">
+                        <h5 class="offcanvas-title text-center w-100" id="offcanvasNavbarLabel">
+                            <span class="logo-letter">Connect</span><span class="logo-number">4</span>
+                        </h5>
+
+                        <button type="button" class="btn-close shadow-none position-absolute m-2 top-0 end-0"
+                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body pt-0">
+                        <!-- apartados web -->
+                        <ul class="navbar-nav ">
+                            <hr>
+                            <li class="nav-item ">
+                                <a class="fs-5 nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="fs-5 nav-link" href="/pages/play.html">Partida normal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="fs-5 nav-link" href="/pages/custom-game.html">Partida personalizada</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn fs-5 nav-link my-0" data-bs-toggle="modal"
+                                    data-bs-target="#modalNormas">
+                                    Reglas
+                                </button>
+                            </li>
+                        </ul>
+                        <!-- Otras paginas de interes -->
+                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                            <hr>
+                            <li class="nav-item">
+                                <a class="nav-link fs-5" aria-current="page" href="#">Visita mi Portfolio</a>
+                            </li>
+                            <li>
+                                <a class="nav-link fs-5" aria-current="page" href="#">Sobre este proyecto</a>
+                            </li>
+                            <!-- Social media -->
+                            <li class="nav-item">
+                                <ul class="navbar-nav justify-content-center gap-3 flex-row flex-grow-1">
+                                    <li>
+                                        <a class="nav-link fs-2" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link fs-2" href="#"> <i class="fa-brands fa-github"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link fs-2" href="#"> <i class="fa-solid fa-envelope"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </nav>
+            </div>
+        </nav>
+
+        <!-- Modal normas -->
+        <div class="modal fade modal-lg" id="modalNormas" data-bs-backdrop="modal" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fs-5 text-center" id="staticBackdropLabel">Reglas de la partida</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <p>Bienvenido al emocionante juego Connect4, también conocido como Cuatro en línea. Connect4 es un juego de estrategia en el que dos jugadores compiten por ser el primero en conectar cuatro fichas de su color en línea, ya sea vertical, horizontal o diagonalmente, en un tablero vertical de 7 columnas y 6 filas.</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h6>Elige tu color</h6>
+                                <p>Al comenzar el juego, cada jugador selecciona un color, típicamente rojo o amarillo.
+                                    Los jugadores alternan sus turnos durante toda la partida.</p>
+
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Coloca tus fichas</h6>
+                                <p>
+                                    En tu turno, selecciona una columna donde
+                                    desees soltar tu ficha. La ficha caerá hasta ocupar el espacio más bajo disponible
+                                    en
+                                    esa columna.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Conecta 4 fichas</h6>
+                                <p>
+                                    El objetivo es conectar cuatro fichas de tu
+                                    color en línea. Puedes lograrlo en horizontal, vertical o diagonal. ¡Sé astuto y
+                                    planea
+                                    tus movimientos para bloquear a tu oponente y crear tus propias líneas ganadoras!
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Ganador</h6>
+                                <p>
+                                    El jugador que logre conectar cuatro fichas de su color
+                                    primero será el ganador. Si el tablero se llena y nadie ha logrado conectar cuatro
+                                    fichas, el juego termina en empate
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>¡A jugar!</h6>
+                                <p>
+                                    Disfruta del juego Connect4 y pon a prueba tus
+                                    habilidades estratégicas contra amigos o familiares 
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Titulo y botones de inicio -->
         <div class="container main-section-page pb-2 pb-sm-3 pb-md-5">
             <h2 class="title-game-connect4 text-center mb-0 mt-0 mt-sm-2 mt-lg-4">
@@ -102,74 +167,13 @@
             <!-- Botones de inicio de partida -->
             <div class="buttons-section  d-flex flex-column gap-2 justify-content-end align-items-center align-self-end">
                 <a href="/pages/play.html" class="btn btn-primary btn-lg">Partida normal</a>
-                <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal"
-                    data-bs-target="#customGame">Partida personalizada</button>
+                <a href="/pages/custom-game.html" class="btn btn-secondary btn-lg" >Partida personalizada</a>
                 <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Cambiar aspecto</button>
 
             </div>
         </div>
 
-    </div>
-
-
-    <!-- Modal partida personalizada -->
-    <div class="modal fade" id="customGame" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5">Crea tu partida personalizada</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row board-size-customization">
-                        <!-- Ajustes de la partida -->
-                        <div class="col-lg-6">
-                            <h4 class="text-center text-lg-start mb-4">Ajustes de partida</h4>
-                            <div class="d-flex flex-column">
-                                <div class="first-movement-settings mb-2">
-                                    <p class="mb-0">Primer movimiento: </p>
-                                    <select class="form-select form-select-sm" id="first-movement-player"
-                                        aria-label="Selector primer jugador en mover ficha">
-                                        <option value="1" selected>Jugador 1</option>
-                                        <option value="2">Jugador 2</option>
-                                        <option value="3">Aleatorio</option>
-                                    </select>
-                                </div>
-                                <div class="d-flex gap-2 mb-0">
-                                    <label for="rangeColumns" class="form-label mb-0">Número de columnas:</label>
-                                    <p id="customColumns" class="mb-0">7</p>
-                                </div>
-                                <input type="range" class="form-range" min="3" max="7" value="7" id="rangeColumns">
-
-                                <div class="d-flex gap-2 mb-0">
-                                    <label for="rangeRows" class="form-label mb-0">Número de filas:</label>
-                                    <p id="customRows" class="mb-0">6</p>
-                                </div>
-                                <input type="range" class="form-range" min="3" max="7" value="6" id="rangeRows">
-
-                                <div class="d-flex gap-2 mb-0">
-                                    <label for="rangeWinLine" class="form-label mb-0">Fichas para victoria:</label>
-                                    <p id="customWinLine" class="mb-0">4</p>
-                                </div>
-                                <input type="range" class="form-range" min="3" max="7" value="4" id="rangeWinLine">
-                            </div>
-
-                        </div>
-                        <!-- Previsualizacion del tablero -->
-                        <div class="container-tablero-preview col-lg-6 d-flex justify-content-end">
-                            <div id="customTableroPreview" class="rounded gap-1 shadow"></div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <a id="start-custom-game" class="btn btn-primary" href="/pages/custom-game.html">Jugar partida</a>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Modal nombres usuarios-->
@@ -245,7 +249,6 @@
 
     
     <script src="script/background_animation/main.js" type="module" defer></script>
-    <script src="/script/game_logic/custom_game/main.js" type="module" defer></script>
     <script src="script/scriptIndex.js" type="module" defer></script>
 </body>
 

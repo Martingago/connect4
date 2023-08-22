@@ -13,6 +13,10 @@ let cCols = getCols();
 let cRows = getRows();
 let cWin = getFichasVictoria();
 
+
+
+
+
 //Se crea el preview-tablero por defecto:
 createCustomBoard(cCols, cRows, cWin);
 
@@ -52,6 +56,7 @@ rangeWinnerLine.addEventListener("change", () => {
 const btnStartCustomGame = document.querySelector("#start-custom-game");
 btnStartCustomGame.addEventListener("click", () => {
     createCustomGame();
+    console.log("creando todos los elementos")
 });
 
 

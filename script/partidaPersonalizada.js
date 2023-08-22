@@ -1,7 +1,6 @@
 "use strict";
 
 import { inicializarDatosUsuarios, jugador1 } from "./users/initUsers.js";
-import {setCurrentPlayer } from "./users/players/players.js";
 import { generateTablero } from "./game_logic/game_management/crearteBoard.js";
 import { handleCellClick } from "./game_logic/game_management/gameManager.js";
 import { resetGame } from "./game_logic/game_management/restartGame.js";
@@ -10,6 +9,9 @@ import { updatePlayersTableData } from "./game_logic/view/updatePlayerData.js";
 import { resetPlayersScore } from "./users/hooks/updateChanges.js";
 import { setBoardData } from "./game_logic/custom_game/dataStore/constructorGame.js";
 import { getFichasVictoria } from "./game_logic/board/board.js";
+
+const myModal = new bootstrap.Modal('#customGame');
+myModal.show();
 
 
 inicializarDatosUsuarios();
