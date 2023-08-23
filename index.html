@@ -5,8 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connect4: Partidas Personalizadas en Modo 2 Jugadores</title>
-    <meta name="description" content="¡Connect4: Juega, Personaliza y Desafía en Partidas Estratégicas de 2 Jugadores! ¡Combate el Aburrimiento con Diversión Instantánea!">
-    <meta name="keywords" content="Juego de tablero, Estrategia, Entretenimiento, Partida de 2 jugadores, Conectar 4, Juego clásico, Diversión, Partida personalizada, Personalización de avatares, Tácticas de juego">
+    <meta name="description"
+        content="¡Connect4: Juega, Personaliza y Desafía en Partidas Estratégicas de 2 Jugadores! ¡Combate el Aburrimiento con Diversión Instantánea!">
+    <meta name="keywords"
+        content="Juego de tablero, Estrategia, Entretenimiento, Partida de 2 jugadores, Conectar 4, Juego clásico, Diversión, Partida personalizada, Personalización de avatares, Tácticas de juego">
     <link rel="shortcut icon" href="/img/icon/boy-user-avatar.webp" type="image/x-icon">
     <link rel="stylesheet" href="style/design/main.css">
     <link rel="stylesheet" href="style/design/main_page/design.css">
@@ -25,9 +27,10 @@
     <div id="background-animation"></div>
 
     <!-- Contenido principal -->
-    <div class="page-container backdrop-filter-blur">
-           <!-- Navegador web -->
-           <nav class="navbar bg-body-transparent sticky-top">
+    <div class="page-container">
+
+        <!-- Navegador web -->
+        <nav class="navbar bg-body-transparent sticky-top">
             <div class="container-fluid position-relative justify-content-start">
                 <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -50,13 +53,17 @@
                         <ul class="navbar-nav ">
                             <hr>
                             <li class="nav-item ">
-                                <a class="fs-5 nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                                <a class="fs-5 nav-link active" aria-current="page" href="/index.html"> Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="fs-5 nav-link" href="/pages/play.html">Partida normal</a>
+                                <a class="fs-5 nav-link" href="/pages/play.html"> Partida normal</a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="fs-5 nav-link" href="/pages/custom-game.html">Partida personalizada</a>
+                                <a class="fs-5 nav-link" href="/pages/custom-game.html"> Partida personalizada</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="fs-5 nav-link" href="/index.html"> Personalizar avatar</a>
                             </li>
                             <li class="nav-item">
                                 <!-- Button trigger modal -->
@@ -73,16 +80,19 @@
                                 <a class="nav-link fs-5" aria-current="page" href="#">Visita mi Portfolio</a>
                             </li>
                             <li>
-                                <a class="nav-link fs-5" aria-current="page" href="#">Sobre este proyecto</a>
+                                <a class="nav-link fs-5" aria-current="page" href="/pages/informacion-proyecto.html">Sobre este proyecto</a>
                             </li>
                             <!-- Social media -->
                             <li class="nav-item">
                                 <ul class="navbar-nav justify-content-center gap-3 flex-row flex-grow-1">
                                     <li>
-                                        <a class="nav-link fs-2" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                        <a class="nav-link fs-2"
+                                            href="https://www.linkedin.com/in/mart%C3%ADn-gago-chor%C3%A9n-6b1814241/"
+                                            target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                                     </li>
                                     <li>
-                                        <a class="nav-link fs-2" href="#"> <i class="fa-brands fa-github"></i></a>
+                                        <a class="nav-link fs-2" href="https://github.com/Martingago" target="_blank">
+                                            <i class="fa-brands fa-github"></i></a>
                                     </li>
                                     <li>
                                         <a class="nav-link fs-2" href="#"> <i class="fa-solid fa-envelope"></i></a>
@@ -96,7 +106,7 @@
         </nav>
 
         <!-- Modal normas -->
-        <div class="modal fade modal-lg" id="modalNormas" data-bs-backdrop="modal" data-bs-keyboard="false"
+        <div class="modal fade modal-lg " id="modalNormas" data-bs-backdrop="modal" data-bs-keyboard="false"
             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
@@ -106,7 +116,10 @@
                     </div>
                     <div class="modal-body">
 
-                        <p>Bienvenido al emocionante juego Connect4, también conocido como Cuatro en línea. Connect4 es un juego de estrategia en el que dos jugadores compiten por ser el primero en conectar cuatro fichas de su color en línea, ya sea vertical, horizontal o diagonalmente, en un tablero vertical de 7 columnas y 6 filas.</p>
+                        <p>Bienvenido al emocionante juego Connect4, también conocido como Cuatro en línea. Connect4 es
+                            un juego de estrategia en el que dos jugadores compiten por ser el primero en conectar
+                            cuatro fichas de su color en línea, ya sea vertical, horizontal o diagonalmente, en un
+                            tablero vertical de 7 columnas y 6 filas.</p>
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <h6>Elige tu color</h6>
@@ -144,7 +157,7 @@
                                 <h6>¡A jugar!</h6>
                                 <p>
                                     Disfruta del juego Connect4 y pon a prueba tus
-                                    habilidades estratégicas contra amigos o familiares 
+                                    habilidades estratégicas contra amigos o familiares
                                 </p>
                             </li>
                         </ul>
@@ -158,16 +171,20 @@
         <!-- Titulo y botones de inicio -->
         <div class="container main-section-page pb-2 pb-sm-3 pb-md-5">
             <h2 class="title-game-connect4 text-center mb-0 mt-0 mt-sm-2 mt-lg-4">
-                <span class="logo-letter">Connect</span><span
-                    class="logo-number">4</span>
+                <span class="logo-letter">Connect</span><span class="logo-number">4</span>
             </h2>
             <h4 class="text-center fs-3">Desafía a tus amigos en el clásico juego de estrategia</h4>
 
-            <p class="fs-5 text-center p-4">¿Listo para la diversión estratégica? En Connect4, enfrenta a tus amigos en intensas partidas en modo 2 jugadores. Descubre quién puede planificar y ejecutar las mejores tácticas para asegurarse la victoria. No solo disfrutarás del clásico juego de tablero, sino que también podrás personalizar tus partidas para añadir un toque personal. ¡Sumérgete en la competencia amistosa de Connect4 hoy mismo!</p>
+            <p class="fs-5 text-center p-4">¿Listo para la diversión estratégica? En Connect4, enfrenta a tus amigos en
+                intensas partidas en modo 2 jugadores. Descubre quién puede planificar y ejecutar las mejores tácticas
+                para asegurarse la victoria. No solo disfrutarás del clásico juego de tablero, sino que también podrás
+                personalizar tus partidas para añadir un toque personal. ¡Sumérgete en la competencia amistosa de
+                Connect4 hoy mismo!</p>
             <!-- Botones de inicio de partida -->
-            <div class="buttons-section  d-flex flex-column gap-2 justify-content-end align-items-center align-self-end">
+            <div
+                class="buttons-section  d-flex flex-column gap-2 justify-content-end align-items-center align-self-end">
                 <a href="/pages/play.html" class="btn btn-primary btn-lg">Partida normal</a>
-                <a href="/pages/custom-game.html" class="btn btn-secondary btn-lg" >Partida personalizada</a>
+                <a href="/pages/custom-game.html" class="btn btn-secondary btn-lg">Partida personalizada</a>
                 <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Cambiar aspecto</button>
 
@@ -247,7 +264,7 @@
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
 
-    
+
     <script src="script/background_animation/main.js" type="module" defer></script>
     <script src="script/scriptIndex.js" type="module" defer></script>
 </body>
