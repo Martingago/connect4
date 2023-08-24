@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información del proyecto</title>
-
     <link rel="stylesheet" href="/style/design/main_page/background_animation.min.css">
+    <link rel="stylesheet" href="/style/design/main.min.css">
     <link rel="stylesheet" href="/style/design/about-this/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -164,82 +164,133 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container-information-projects">
 
-            <article>
-                <h3>Sobre este proyecto</h3>
-                <p class="fs-5">Este proyecto de Connect4 ha sido una emocionante aventura en mi camino como
-                    desarrollador junior. Durante el desarrollo de esta aplicación, he aprendido mucho y he enfrentado
-                    diversos desafíos que me han permitido crecer profesionalmente.</p>
-
-                <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-                    <div class="card d-flex justify-content-center align-items-center">
-                        <img  src="/img/about-this/brands/html5-logo-31813.png" class="card-img-top" alt="logo de html5" title="" loading="lazy">
-                        <div class="card-body">
-                            <p class="card-text">HTML5</p>
-                        </div>
-                    </div>
-                    <div class="card d-flex justify-content-center align-items-center">
-                        <img  src="/img/about-this/brands/css3-11-1175239.png" class="card-img-top" alt="logo de css" title="" loading="lazy">
-                        <div class="card-body">
-                            <p class="card-text">CSS</p>
-                        </div>
-                    </div>
-                    <div class="card d-flex justify-content-center align-items-center">
-                        <img  src="/img/about-this/brands/javascript-39404.png" class="card-img-top" alt="logo de JavaScript" title="" loading="lazy">
-                        <div class="card-body">
-                            <p class="card-text">JavaScript</p>
-                        </div>
-                    </div>
-                    <div class="card d-flex justify-content-center align-items-center">
-                        <img  src="/img/about-this/brands/bootstrap-logo-web.png" class="card-img-top" alt="logo de Bootstrap5" title="" loading="lazy">
-                        <div class="card-body">
-                            <p class="card-text">Bootstrap 5</p>
-                        </div>
-                    </div>
+            <div class="list-selector rounded">
+                <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#list-item-1">Sobre este proyecto</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Experiencia de
+                        desarrollo</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Desafios</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Aprendizaje desarrollado
+                    </a>
                 </div>
+            </div>
 
-            </article>
-            <article>
-                <h3>Experiencia de desarrollo</h3>
-                <p class="fs-5">Desarrollar esta aplicación ha sido una oportunidad para aplicar mis conocimientos en
-                    programación y llevarlos a la práctica de una manera divertida y educativa. Me enfoqué en crear una
-                    experiencia de juego fluida y atractiva para los usuarios, garantizando que cada movimiento y acción
-                    fuera procesado de forma eficiente.</p>
-            </article>
-            <article>
-                <h3>Desafios y soluciones</h3>
-                <p class="fs-5">No todo fue sencillo en este camino. A lo largo del desarrollo, me encontré con diversos
-                    desafíos técnicos y conceptuales. Uno de los mayores desafíos fue implementar el algoritmo que
-                    verificara si un jugador había conectado cuatro fichas en línea. Sin embargo, con dedicación y
-                    perseverancia, pude superar este obstáculo y lograr una lógica de juego precisa y funcional.</p>
-                <img src="/img/about-this/image-rendimiento-web-connect4-videogame.png"
-                    alt="imagen que muestra el rendimiento de la web de connect4" title="Rendimiento web"
-                    loading="lazy">
-                <p class="fs-5">Otro desafío interesante fue la optimización del rendimiento, especialmente en el caso
-                    de tableros de juego más grandes. Implementar estrategias para reducir el tiempo de procesamiento y
-                    mejorar la fluidez del juego fue un proceso enriquecedor que me enseñó mucho sobre la importancia de
-                    la eficiencia en el desarrollo.</p>
-            </article>
-            <article>
-                <h3>Aprendizaje desarrollado en el proyecto</h3>
-                <p class="fs-5">Como desarrollador junior, esta experiencia me ha enseñado que el aprendizaje es un
-                    proceso continuo.
-                    Cada desafío superado y cada solución encontrada han sido oportunidades para mejorar mis habilidades
-                    y conocimientos. Estoy emocionado por seguir aprendiendo y creciendo en este apasionante campo de la
-                    programación.</p>
-                <p class="fs-5">Espero que disfrutes jugando esta aplicación tanto como yo disfruté creándola. Si tienes
-                    alguna
-                    sugerencia o comentario sobre el proyecto, estaré encantado de escucharlo. Gracias por ser parte de
-                    este viaje y por apoyar mi pasión por el desarrollo de software. ¡Que te diviertas jugando Connect4!
-                </p>
-            </article>
+            <div class="rounded">
+                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                    class="scrollspy-elements d-flex flex-column gap-4 rounded" tabindex="0">
+                    <article id="list-item-1" class="element-info rounded shadow bg-body-tertiary p-4">
+                        <h3>Sobre este proyecto</h3>
+                        <p class="fs-5">Bienvenidos a la experiencia de Connect4, un proyecto que ha sido una
+                            verdadera aventura para mí como desarrollador junior. Este juego clásico de estrategia
+                            ha sido uno de mis primeros proyectos, diseñado específicamente para poner a prueba y
+                            expandir mis habilidades en programación en JavaScript.</p>
+                        <p class="fs-5">A lo largo de este emocionante viaje, me he enfrentado a desafíos que nunca
+                            habría imaginado. Desde los primeros pasos hasta la versión final, este proyecto me ha
+                            enseñado la importancia de la resolución de problemas y la capacidad de adaptación. Cada
+                            obstáculo que he encontrado me ha brindado la oportunidad de aprender y crecer como
+                            desarrollador.</p>
+                        <p class="fs-5">La búsqueda constante de soluciones, la optimización del código y el
+                            establecimiento de buenas prácticas de programación se han convertido en piedra angular
+                            de este proyecto. Cada línea de código escrita aquí ha sido una lección, y cada error
+                            cometido ha sido una oportunidad de mejora.</p>
+                        <p class="fs-5">En última instancia, Connect4 representa más que solo un juego. Es un
+                            testimonio de mi dedicación para aprender y mejorar, y estoy emocionado de compartirlo
+                            contigo. ¡Espero que disfrutes jugando tanto como yo disfruté creándolo!</p>
+
+                    </article>
+                    <article id="list-item-2" class="element-info rounded shadow bg-body-tertiary p-4">
+                        <h3>Experiencia de desarrollo</h3>
+                        <p class="fs-5">Desarrollar esta aplicación ha sido una oportunidad para aplicar mis
+                            conocimientos en
+                            programación y llevarlos a la práctica de una manera divertida y educativa. Me enfoqué
+                            en crear una
+                            experiencia de juego fluida y atractiva para los usuarios, garantizando que cada
+                            movimiento y acción
+                            fuera procesado de forma eficiente.</p>
+                        <p class="fs-5">En la creación de este emocionante proyecto de Connect4, he empleado una
+                            variedad de tecnologías que han sido fundamentales para su desarrollo y funcionamiento.
+                            Estas tecnologías incluyen:</p>
+
+                        <div class="d-flex gap-2 justify-content-center align-items-center">
+                            <div class="card d-flex justify-content-center align-items-center">
+                                <img src="/img/about-this/brands/html5-logo-31813.png" class="card-img-top"
+                                    alt="logo de html5" title="" loading="lazy">
+                                <div class="card-body">
+                                    <h4 class="card-text">HTML5</h4>
+                                </div>
+                            </div>
+                            <div class="card d-flex justify-content-center align-items-center">
+                                <img src="/img/about-this/brands/css3-11-1175239.png" class="card-img-top"
+                                    alt="logo de css" title="" loading="lazy">
+                                <div class="card-body">
+                                    <h4 class="card-text">CSS</h4>
+                                </div>
+                            </div>
+                            <div class="card d-flex justify-content-center align-items-center">
+                                <img src="/img/about-this/brands/javascript-39404.png" class="card-img-top"
+                                    alt="logo de JavaScript" title="" loading="lazy">
+                                <div class="card-body">
+                                    <h4 class="card-text">JavaScript</h4>
+                                </div>
+                            </div>
+                            <div class="card d-flex justify-content-center align-items-center">
+                                <img src="/img/about-this/brands/bootstrap-logo-web.png" class="card-img-top"
+                                    alt="logo de Bootstrap5" title="" loading="lazy">
+                                <div class="card-body">
+                                    <h4 class="card-text">Bootstrap 5</h4>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </article>
+                    <article id="list-item-3" class="element-info rounded shadow bg-body-tertiary p-4">
+                        <h3>Desafios y soluciones</h3>
+                        <p class="fs-5">No todo fue sencillo en este camino. A lo largo del desarrollo, me encontré
+                            con diversos
+                            desafíos técnicos y conceptuales. Uno de los mayores desafíos fue implementar el
+                            algoritmo que
+                            verificara si un jugador había conectado cuatro fichas en línea. Sin embargo, con
+                            dedicación y
+                            perseverancia, pude superar este obstáculo y lograr una lógica de juego precisa y
+                            funcional.</p>
+                        <img src="/img/about-this/image-rendimiento-web-connect4-videogame.png"
+                            alt="imagen que muestra el rendimiento de la web de connect4" title="Rendimiento web"
+                            loading="lazy">
+                        <p class="fs-5">Otro desafío interesante fue la optimización del rendimiento, especialmente
+                            en el caso
+                            de tableros de juego más grandes. Implementar estrategias para reducir el tiempo de
+                            procesamiento y
+                            mejorar la fluidez del juego fue un proceso enriquecedor que me enseñó mucho sobre la
+                            importancia de
+                            la eficiencia en el desarrollo.</p>
+                    </article>
+                    <article id="list-item-4" class="element-info rounded shadow bg-body-tertiary p-4">
+                        <h3>Aprendizaje desarrollado en el proyecto</h3>
+                        <p class="fs-5">Como desarrollador junior, esta experiencia me ha enseñado que el
+                            aprendizaje es un
+                            proceso continuo.
+                            Cada desafío superado y cada solución encontrada han sido oportunidades para mejorar mis
+                            habilidades
+                            y conocimientos. Estoy emocionado por seguir aprendiendo y creciendo en este apasionante
+                            campo de la
+                            programación.</p>
+                        <p class="fs-5">Espero que disfrutes jugando esta aplicación tanto como yo disfruté
+                            creándola. Si tienes
+                            alguna
+                            sugerencia o comentario sobre el proyecto, estaré encantado de escucharlo. Gracias por
+                            ser parte de
+                            este viaje y por apoyar mi pasión por el desarrollo de software. ¡Que te diviertas
+                            jugando Connect4!
+                        </p>
+                    </article>
+                </div>
+            </div>
 
 
         </div>
-
-
-
 
     </div>
 

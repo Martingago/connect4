@@ -1,5 +1,36 @@
-.proyect-tech-use{
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
+/* Bloque del contenedor principal */
+
+
+.scrollspy-elements{
+    height: 80vh;
+    overflow-y: scroll;
+}
+.scrollspy-elements::-webkit-scrollbar {
+    width: 0 !important; /* Oculta la barra de desplazamiento en navegadores WebKit (Chrome, Safari, etc.) */
+}
+
+.list-selector{
+}
+
+
+
+/* Bloque de elementos */
+.element-info{
+    height: auto;
+    /* min-height: 100%; */
+}
+
+
+@media screen and (min-width: 1309px) {
+    .container-information-projects{
+        display: grid;
+        width: 90%;
+        grid-template-columns: 250px auto;
+        gap: 1rem;
+        align-self: center;    
+    }
+
+    .element-info{
+        min-height: 100%;
+    }
 }
