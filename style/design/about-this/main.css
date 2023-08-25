@@ -1,27 +1,56 @@
+/* Titulo */
+.title-page{
+    font-size: 2.5rem;
+    font-family: LilitiaOne;
+}
+.title-impact{
+    color: yellow;
+    text-shadow: 2px 2px 2px black;
+}
+
 /* Bloque del contenedor principal */
-
-
 .scrollspy-elements{
     height: 80vh;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
+
 .scrollspy-elements::-webkit-scrollbar {
-    width: 0 !important; /* Oculta la barra de desplazamiento en navegadores WebKit (Chrome, Safari, etc.) */
+    width: 0;
 }
-
-.list-selector{
-}
-
-
 
 /* Bloque de elementos */
 .element-info{
     height: auto;
-    /* min-height: 100%; */
+}
+
+/* Subtitulo*/
+.subtitle-info{
+    text-align: center;
+}
+
+/* Tecnologias empleadas */
+
+.technologies-project{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 
+@media screen and (max-width: 1308px) {
+    .list-selector{
+        display: none;
+        font-size: 3rem;
+    }
+}
+
 @media screen and (min-width: 1309px) {
+    .title-page{
+        font-size: 4.5rem;
+    }
     .container-information-projects{
         display: grid;
         width: 90%;
@@ -33,4 +62,22 @@
     .element-info{
         min-height: 100%;
     }
+    .subtitle-info{
+        text-align: left;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .technologies-project{
+        grid-template-columns: repeat(2, auto);
+    }
+    
+}
+
+@media screen and (max-width: 367px) {
+    .technologies-project{
+        grid-template-columns: repeat(1,auto);
+    }
+    
 }

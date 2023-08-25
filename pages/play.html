@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/style/design/tablero.min.css">
     <link rel="stylesheet" href="/style/design/main.min.css">
     <link rel="stylesheet" href="/style/design/main_page/background_animation.min.css">
-    <link rel="stylesheet" href="/style/design/tableroContainer.min.css">
+    <link rel="stylesheet" href="/style/design/tableroContainer.css">
     <link rel="stylesheet" href="/style/design/userElements/userElements.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -29,10 +29,10 @@
            <!-- Navegador web -->
            <nav class="navbar bg-body-transparent sticky-top">
             <div class="container-fluid position-relative justify-content-start">
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <button class="navbar-toggler border-0 shadow-none fs-2 shadow" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
                 <!-- OffCanvas -->
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
@@ -73,9 +73,9 @@
                         <!-- Otras paginas de interes -->
                         <ul class="navbar-nav justify-content-end flex-grow-1">
                             <hr>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link fs-5" aria-current="page" href="#">Visita mi Portfolio</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a class="nav-link fs-5" aria-current="page" href="/pages/informacion-proyecto.html">Sobre este proyecto</a>
                             </li>
@@ -166,7 +166,6 @@
             </div>
         </div>
 
-
         <!-- Seccion principal de la web: Tablero, puntuaciones, turno  -->
         <div class="loading">
             <div class="spinner-border" role="status">
@@ -210,25 +209,22 @@
 
             <!-- Submenu e informacion del juego -->
             <div class="aside-game-info position-relative">
+                <button type="button" class="btn-reset-score rounded" data-bs-toggle="modal"
+                    data-bs-target="#resetGameScore">
+                    Resetear puntos <i class="fa-solid fa-crown"></i>
+                </button>
+
                 <div
                     class="section-turn-player d-flex flex-column justify-content-center align-items-center position-relative">
-                    <p class="mb-0">Turno de: </p>
+                    <p class="mb-0 mt-1">Turno de: </p>
                     <p class="player-turn-txt"> default </p>
                 </div>
 
-            </div>
-            <!-- Botones de partida -->
-            <div
-                class="d-flex flex-column-reverse flex-sm-row  gap-2 w-100 justify-content-between justify-content-md-evenly mb-2">
-                <button type="button" class="btn-reset-score btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#resetGameScore">
-                    Reiniciar Puntuación <i class="fa-solid fa-crown"></i>
-                </button>
-                <button type="button" class="btn-reset-game btn btn-primary " data-bs-toggle="modal"
-                    data-bs-target="#resetGameModal">Reiniciar Partida <i class="fa-solid fa-rotate-right"></i>
-                </button>
-            </div>
+                <button type="button" class="btn-reset-game rounded" data-bs-toggle="modal"
+                data-bs-target="#resetGameModal">Reiniciar Partida <i class="fa-solid fa-rotate-right"></i>
+            </button>
 
+            </div>
         </div>
 
 
