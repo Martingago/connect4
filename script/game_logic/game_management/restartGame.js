@@ -16,5 +16,4 @@ const resetGame = () => {
     });
     gameBoard = gameBoard.map(row => row.map(() => null));
     setGameBoard(gameBoard);
-    setCurrentPlayer(jugador1)
 }

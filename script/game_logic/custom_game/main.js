@@ -1,21 +1,30 @@
 "use strict";
-import { createCustomBoard, updRangeCols, updRangeRows, updRangeWinLine } from "../view/custom_game/visualElements.js";
+import { createCustomBoard, updRangeCols, updRangeRows, updRangeWinLine, updateTitleWin } from "../view/custom_game/visualElements.js";
 import { getMaxValue, verificarValorDeLinea } from "./winnerInput/winnerFunctions.js";
 import { getCols, getRows, getFichasVictoria, setFichasVictoria } from "../board/board.js";
-import { createCustomGame, setStartPlayer } from "./dataStore/constructorGame.js";
+import { createCustomGame, setJugadorInicial, setStartPlayer } from "./dataStore/constructorGame.js";
+import { inicializarDatosUsuarios } from "../../users/initUsers.js";
+import { generateTablero } from "../game_management/crearteBoard.js";
+import { updatePlayersTableData } from "../view/updatePlayerData.js";
+import { handleCellClick } from "../game_management/gameManager.js";
+import { resetPlayersScore } from "../../users/hooks/updateChanges.js";
+import { resetGame } from "../game_management/restartGame.js";
+import { hideModalGame } from "../modals/gameModalContent.js";
+import { setNextTurnPlayerTxt } from "../view/modifyUserTxt.js";
 
 const rangeCols = document.querySelector("#rangeColumns");
 const rangeRows = document.querySelector("#rangeRows");
 const rangeWinnerLine = document.querySelector("#rangeWinLine");
 const inputPrimerMovimiento = document.querySelector("#first-movement-player");
 
+const myModal = new bootstrap.Modal('#customGame');
+myModal.show();
+const cancelBtn = document.querySelector("#cancel-custom-game");
+cancelBtn.disabled = true;
+
 let cCols = getCols();
 let cRows = getRows();
 let cWin = getFichasVictoria();
-
-
-
-
 
 //Se crea el preview-tablero por defecto:
 createCustomBoard(cCols, cRows, cWin);
@@ -23,7 +32,7 @@ createCustomBoard(cCols, cRows, cWin);
 
 //Se añaden los listeners de los inputs
 inputPrimerMovimiento.addEventListener("change", () => {
-    setStartPlayer(inputPrimerMovimiento.value);
+    setStartPlayer(Number(inputPrimerMovimiento.value));
 })
 
 //input del numero de columnas que tendrá el tablero
@@ -56,8 +65,39 @@ rangeWinnerLine.addEventListener("change", () => {
 const btnStartCustomGame = document.querySelector("#start-custom-game");
 btnStartCustomGame.addEventListener("click", () => {
     createCustomGame();
-    console.log("creando todos los elementos")
+    inicializarDatosUsuarios();
+    setJugadorInicial();
+    generateTablero();
+    updatePlayersTableData()
+    updateTitleWin();
+    cancelBtn.disabled = false;
+
 });
+
+    //Permite hacer click en el tablero una vez ha sido generado
+    const tablero = document.querySelector(".tablero");
+    tablero.addEventListener("click", handleCellClick);
+
+    //Boton modal para Reiniciar la partida
+    const btnRestartModal = document.querySelector(".btn-restart-modal");
+    btnRestartModal.addEventListener("click", () => {
+        resetGame();
+        setJugadorInicial()
+        setNextTurnPlayerTxt();
+        hideModalGame();
+    });
+
+    //Reinicia la partida con el boton:
+    const btnReiniciarPartida = document.querySelector(".btn-restart-game");
+    btnReiniciarPartida.addEventListener("click", () => {
+        resetGame();
+        setJugadorInicial();
+        setNextTurnPlayerTxt();
+    })
+
+    const reiniciarScore = document.querySelector("#reset-score");
+
+    reiniciarScore.addEventListener("click", resetPlayersScore)
 
 
 /**
@@ -82,3 +122,5 @@ const limitOnWinnerLine = () => {
         console.log("para aumentar este valor añade mas filas o columnas")
     }
 }
+
+

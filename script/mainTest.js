@@ -8,6 +8,7 @@ import { resetGame } from "./game_logic/game_management/restartGame.js";
 import { hideModalGame } from "./game_logic/modals/gameModalContent.js";
 import { updatePlayersTableData } from "./game_logic/view/updatePlayerData.js";
 import { resetPlayersScore } from "./users/hooks/updateChanges.js";
+import { setNextTurnPlayerTxt } from "./game_logic/view/modifyUserTxt.js";
 
 inicializarDatosUsuarios();
 setCurrentPlayer(jugador1);
@@ -25,6 +26,8 @@ tablero.addEventListener("click", handleCellClick);
 const btnRestartModal = document.querySelector(".btn-restart-modal");
 btnRestartModal.addEventListener("click", () => {
     resetGame();
+    setCurrentPlayer(jugador1);
+    setNextTurnPlayerTxt();
     hideModalGame();
 });
 
@@ -32,6 +35,8 @@ btnRestartModal.addEventListener("click", () => {
 const btnReiniciarPartida = document.querySelector(".btn-restart-game");
 btnReiniciarPartida.addEventListener("click", () => {
     resetGame();
+    setCurrentPlayer(jugador1);
+    setNextTurnPlayerTxt();
 })
 
 const reiniciarScore = document.querySelector("#reset-score");

@@ -57,7 +57,7 @@ const dropTokenAnimation = (columna) => {
 let contador = 0;
 const addFichaAleatoria = (maxValue) => {
     if (contador < maxValue) {
-        const numAleatorio = Math.floor(Math.random() * 7);
+        const numAleatorio = Math.floor(Math.random() * Bgcols);
         dropTokenAnimation(numAleatorio);
         contador++;
     } else {

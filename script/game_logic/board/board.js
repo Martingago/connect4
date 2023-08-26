@@ -55,6 +55,7 @@ const setGameBoard = (newGameBoard) => {
  */
 const createBoard = (rows, cols) => {
     const tablero = document.querySelector(".tablero");
+    tablero.innerHTML = '';
     for (let row = 0; row < rows; row++) {
         gameBoard[row] = [];
         for (let col = 0; col < cols; col++) {

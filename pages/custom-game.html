@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>¡Desafía a un Amigo en una Partida de Connect4 en Modo 2 Jugadores!</title>
+    <title>¡Desafía a un Amigo en una Partida personalizada de Connect4 en Modo 2 Jugadores!</title>
     <meta name="description"
         content="¡Compite con amigos en emocionantes partidas de Connect4 en modo 2 jugadores! ¡Gana y demuestra quién domina el tablero!">
     <link rel="shortcut icon" href="/img/icon/boy-user-avatar.webp" type="image/x-icon">
@@ -31,9 +31,9 @@
         <nav class="navbar bg-body-transparent sticky-top">
             <div class="container-fluid position-relative justify-content-start">
                 <button class="navbar-toggler border-0 shadow-none fs-2 shadow" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
 
                 <!-- OffCanvas -->
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
@@ -104,8 +104,8 @@
         </nav>
 
         <!-- Modal normas -->
-        <div class="modal fade modal-lg " id="modalNormas" data-bs-backdrop="modal"
-            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade modal-lg " id="modalNormas" data-bs-backdrop="modal" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -175,12 +175,14 @@
         </div>
 
         <div class="section-connect4-game ">
-            <h2 class="title-game-connect4 my-0"><span class="logo-letter">Connect</span><span
+            <h2 class="title-game-connect4 my-0"><span class="logo-letter">Connect</span><span id="logo-number"
                     class="logo-number">4</span>
             </h2>
+
             <div class="tablero-container">
                 <!-- Tablero -->
                 <div class="container-tablero-juego d-flex flex-column gap-2">
+                    <!-- Tablero -->
                     <section class="tablero border border-3 border-dark">
                     </section>
                 </div>
@@ -209,27 +211,31 @@
             </div>
 
             <!-- Submenu e informacion del juego -->
+
             <div class="aside-game-info position-relative">
+                <button type="button" class="btn-reset-score rounded" data-bs-toggle="modal"
+                    data-bs-target="#resetGameScore">
+                    Resetear puntos <i class="fa-solid fa-crown"></i>
+                </button>
+
                 <div
                     class="section-turn-player d-flex flex-column justify-content-center align-items-center position-relative">
-                    <p class="mb-0">Turno de: </p>
+                    <p class="mb-0 mt-1">Turno de: </p>
                     <p class="player-turn-txt"> default </p>
                 </div>
 
-            </div>
-            <!-- Botones de partida -->
-            <div
-                class="d-flex flex-column-reverse flex-sm-row  gap-2 w-100 justify-content-between justify-content-md-evenly mb-2">
-                <button type="button" class="btn-reset-score btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#resetGameScore">
-                    Reiniciar Puntuación <i class="fa-solid fa-crown"></i>
-                </button>
-                <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal"
-                    data-bs-target="#customGame">Partida personalizada</button>
-                <button type="button" class="btn-reset-game btn btn-primary " data-bs-toggle="modal"
+                <button type="button" class="btn-reset-game rounded" data-bs-toggle="modal"
                     data-bs-target="#resetGameModal">Reiniciar Partida <i class="fa-solid fa-rotate-right"></i>
                 </button>
+
             </div>
+            <!-- Botones de reinicio -->
+            <div class="d-flex  align-items-center mb-2">
+                <button type="button" class="btn-config-game rounded" data-bs-toggle="modal"
+                    data-bs-target="#customGame">Configurar Partida <i class="fa-solid fa-gears"></i></button>
+            </div>
+
+
 
         </div>
 
@@ -284,7 +290,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <a href="/index.html"  class="btn btn-secondary">Cancelar<a>
+                        <button id="cancel-custom-game" class="btn btn-secondary" data-bs-dismiss="modal"
+                            aria-label="Close">Cancelar</button>
                         <button id="start-custom-game" data-bs-dismiss="modal" class="btn btn-primary">Jugar
                             partida</button>
                     </div>
@@ -363,10 +370,8 @@
 
     </div>
 
-
     <script src="/script/background_animation/main.js" type="module" defer></script>
     <script src="/script/game_logic/custom_game/main.js" type="module" defer></script>
-    <script type="module" src="/script/partidaPersonalizada.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

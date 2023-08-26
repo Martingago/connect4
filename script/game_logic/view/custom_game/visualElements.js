@@ -1,7 +1,7 @@
 "use strict";
 import { getCols, getRows, getFichasVictoria, setCols, setRows, setFichasVictoria } from "../../board/board.js";
 
-export { updRangeCols, updRangeRows, createCustomBoard, updRangeWinLine }
+export { updRangeCols, updRangeRows, createCustomBoard, updRangeWinLine, updateTitleWin }
 
 const currentColsTxt = document.querySelector("#customColumns");
 const currentRowsTxt = document.querySelector("#customRows");
@@ -28,6 +28,10 @@ const updRangeWinLine = () => {
     setFichasVictoria(Number(rangeWinLine.value));
 }
 
+const updateTitleWin = () => {
+    const title = document.querySelector("#logo-number");
+    title.textContent = getFichasVictoria();
+}
 
 
 /**
