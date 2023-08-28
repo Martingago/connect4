@@ -98,10 +98,6 @@ const updateGlobalUserData = () => {
     actualizarNombreUsuarioApp(jugador2);
 }
 
-
-
-
-
 /**
  * Actualiza el texto "Siguiente jugador", con el valor del actual turno de jugador
  */

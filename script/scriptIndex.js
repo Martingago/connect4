@@ -8,7 +8,6 @@ import { updateDataPlayersStore } from "./users/hooks/updateChanges.js";
 import { fillFormWithUserDetails } from "./users/hooks/avatarSelectorData.js";
 import { updatePlayersTableData } from "./game_logic/view/updatePlayerData.js";
 
-
 //Genera la lista de avatares disponibles
 inicializarDatosUsuarios();
 //crear lista de avatares
@@ -43,10 +42,10 @@ btnConfirmUserChanges.addEventListener("click", () => {
     updateDataPlayersStore(jugador1, jugador2);
     //Actuliza los botones de seleccion de avatar
     stopAvatarUserSelection();
-    //Actualiza los datos de las fichas de jugadores
-    if(document.querySelector(".element-player-1")){
-        updatePlayersTableData();
-    }
     
-
+    //Toast de cambios confirmados:
+    const toastLiveExample = document.getElementById('liveToast')
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+    toastBootstrap.show()
 })
+
