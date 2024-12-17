@@ -2,6 +2,8 @@
 
 **Connect4** es una versión interactiva y personalizable del clásico juego **Conecta 4**, desarrollada con HTML, CSS, JavaScript y **Bootstrap**. El juego está diseñado para ser fácil de usar, divertido y visualmente atractivo, permitiendo partidas entre dos jugadores.
 
+![Connect4 Screenshot](https://github.com/Martingago/connect4/blob/main/img/global/connect4.png)
+
 ## 🚀 Características Principales
 
 - **🎨 Personalización de Avatares**  
